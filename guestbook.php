@@ -10,11 +10,11 @@
 	<div id="two-column" class="container">
 			<div id="tbox1">
 			<form action="demo_keygen.asp" method="get">
-				Name: <input  type="text" name="name"> </br>
-				E-Mail: <input  type="text" name="email"> </br>
-				Eintrag: <textarea value"Ihr Eintrag" name="post" cols="50" rows="10"></textarea> </br>
+				Name: <input  type="text" name="name" placeholder="Max Muster"> </br>
+				E-Mail: <input  type="text" name="email" placeholder="max@muster.de"> </br>
+				Eintrag: <textarea value"Ihr Eintrag" name="post" cols="50" rows="10" placeholder="Bitte geben Sie Ihren Gästebucheintrag ein."></textarea> </br>
 
-			<input type="submit"value="Eintrag veröffentlichen">
+			<input id="newEntry" type="submit"value="Eintrag veröffentlichen">
 			</form>
 			</div>
 			
@@ -26,24 +26,7 @@
 	</div>
 </div>
 
-<script language="javascript" type="text/javascript">
-xmlhttp = new XMLHttpRequest();
-
-function getGuestBookEntries(){
-	xmlhttp.onreadystatechange =
-	function()
-	{
-		if(xmlhttp.readyState ==4 && xmlhttp.status==200)
-		{
-			document.getElementById('tbox2').innerHTML = xmlhtp.responseText;
-		}
-		}
-	}
-	
-	xmlhttp.open("GET", "http://localhost:8080/GuestBook/CurrentDate", true);
-	xmlhttp.send();
-}
-</script>
+<script src = "js/default.js"> </script>
 	
 <?php
 	include "Footer.php";
