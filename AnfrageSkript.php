@@ -4,7 +4,7 @@
 <body>
 
 <?php
-$empfaenger = "m.wieben@yahoo.de";
+$empfaenger = "matswn77@gmail.com";
 $absendername = htmlspecialchars($_POST["name"]);
 $absendermail = $_POST["email"];
 $betreff = "$absendername will Kontakt aufnehmen";
