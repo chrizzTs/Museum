@@ -1,0 +1,32 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+</head>
+<div id="form">
+<form action="addEntry.php" method="post">
+	<table>
+		<tr>
+			<td>Name: </td> 
+			<td><input  type="text" name="name" placeholder="Max Muster"><td>
+		</tr>
+		<tr>
+			<td>E-Mail:</td>
+			<td> <input  type="text" name="email" placeholder="max@muster.de"></td>
+		</tr>
+			<td>Eintrag:</td>
+			<td><textarea value"Ihr Eintrag" name="post" cols="50" rows="10" placeholder="Bitte 	geben Sie Ihren Gästebucheintrag ein."></textarea> </td>
+		</tr>
+	</table>
+	<input id="submit" type="submit"value="Eintrag veröffentlichen">
+</form>
+</div>
+
+<div id="entries">
+</div>
+  
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="default.js"></script>
+
+
+	
+</html>
