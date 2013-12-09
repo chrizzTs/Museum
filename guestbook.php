@@ -7,25 +7,43 @@
 		<div class="title">
 			<h2>Gästebuch</h2>
 		</div>
-		
-	<table>
-	<tr><td align="left"   valign="top">
+	<div id="two-column" class="container">
 			<div id="tbox1">
-				<?php
-				include "guestbookEntryForm.php";
-				?>
+			<form action="demo_keygen.asp" method="get">
+				Name: <input  type="text" name="name"> </br>
+				E-Mail: <input  type="text" name="email"> </br>
+				Eintrag: <textarea value"Ihr Eintrag" name="post" cols="50" rows="10"></textarea> </br>
+
+			<input type="submit"value="Eintrag veröffentlichen">
+			</form>
 			</div>
-	</td>
-	<td>
-			<div id="tbox2Entries">
-		
+			
+			<div id="tbox2">
+			dfdfd
+			 <input type="button" onclick="getGuestBookEntries()" value="transparenz" />;
 			</div>
-	</td></tr>
-	</table>
+	</div>
 	</div>
 </div>
 
+<script language="javascript" type="text/javascript">
+xmlhttp = new XMLHttpRequest();
 
+function getGuestBookEntries(){
+	xmlhttp.onreadystatechange =
+	function()
+	{
+		if(xmlhttp.readyState ==4 && xmlhttp.status==200)
+		{
+			document.getElementById('tbox2').innerHTML = xmlhtp.responseText;
+		}
+		}
+	}
+	
+	xmlhttp.open("GET", "http://localhost:8080/GuestBook/CurrentDate", true);
+	xmlhttp.send();
+}
+</script>
 	
 <?php
 	include "Footer.php";
