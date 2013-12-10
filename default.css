@@ -58,7 +58,30 @@
 		margin: 0px auto;
 		width: 1200px;
 	}
+<<<<<<< HEAD
 	
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> parent of c9a285c... Revert fede8de..3addbfd
+	#shopitem
+	{
+		width: 1200px;
+		background-color: aqua;
+		height: 300px;
+	}
+	
+<<<<<<< HEAD
+	.container2{
+		width: 800px;
+		margin: 0px auto;
+
+	}
+>>>>>>> fede8de900bdda4aed17576652b2e988a75504a4
+>>>>>>> parent of eddddf1... Revert "WebShop + Kontakt"
+=======
+>>>>>>> parent of c9a285c... Revert fede8de..3addbfd
 
 	
 	textarea
@@ -295,12 +318,12 @@
 
 	.title
 	{
-		margin-bottom: 3em;
+		margin-bottom: 2em;
 	}
 	
 	.title h2
 	{
-		font-size: 2.8em;
+		font-size: 1.8em;
 	}
 	
 	.title .byline
@@ -316,16 +339,22 @@
 /*********************************************************************************/
 
 	#header-wrapper
-	{
+	{	
+		
+		position: relative;
 		overflow: hidden;
-		padding: 10em 0em 10em 0em;
+		padding: 10px 0em 10em 0em;
 		background: url(images/bg01.jpg) repeat-x center top;
 		border-bottom: 20px solid rgba(0,0,0,.5);
 	}
 
 	#header
 	{
+	position: absolute;
+	z-index:2;
 	}
+	
+	
 
 /*********************************************************************************/
 /* Logo                                                                          */
@@ -431,6 +460,7 @@
 	#wrapper1
 	{
 		background: #FFF;
+		
 	}
 
 	#wrapper2
@@ -724,5 +754,159 @@ height: 100px;
 	{
 		border-top-color: #292929;
 	}
+<<<<<<< HEAD
 
+<<<<<<< HEAD
+=======
+
+/*********************************************************************************/
+/* Two Columns                                                                 	 */
+/*********************************************************************************/
+
+	div.webshopItem
+	{
+		width : 800px;
+		height : 200px;
+		color :#ffa300;
+	}
+
+
+
+
+
+
+
+=======
+/*********************************************************************************/
+/* Slide Show	                                                                 */
+/*********************************************************************************/
+
+
+    #slides {
+      display: none
+      	margin: 0px auto;
+	  	
+    }
+
+    #slides .slidesjs-navigation {
+      margin-top:5px;
+    }
+
+    a.slidesjs-next,
+    a.slidesjs-previous,
+    a.slidesjs-play,
+    a.slidesjs-stop {
+      background-image: url(images/btns-next-prev.png);
+      background-repeat: no-repeat;
+      display:block;
+      width:12px;
+      height:18px;
+      overflow: hidden;
+      text-indent: -9999px;
+      float: left;
+      margin-right:5px;
+    }
+
+    a.slidesjs-next {
+      margin-right:10px;
+      background-position: -12px 0;
+    }
+
+    a:hover.slidesjs-next {
+      background-position: -12px -18px;
+    }
+
+    a.slidesjs-previous {
+      background-position: 0 0;
+    }
+
+    a:hover.slidesjs-previous {
+      background-position: 0 -18px;
+    }
+
+    a.slidesjs-play {
+      width:15px;
+      background-position: -25px 0;
+    }
+
+    a:hover.slidesjs-play {
+      background-position: -25px -18px;
+    }
+
+    a.slidesjs-stop {
+      width:18px;
+      background-position: -41px 0;
+    }
+
+    a:hover.slidesjs-stop {
+      background-position: -41px -18px;
+    }
+
+    .slidesjs-pagination {
+      margin: 7px 0 0;
+      float: right;
+      list-style: none;
+    }
+
+    .slidesjs-pagination li {
+      float: left;
+      margin: 0 1px;
+    }
+
+    .slidesjs-pagination li a {
+      display: block;
+      width: 13px;
+      height: 0;
+      padding-top: 13px;
+      background-image: url(images/pagination.png);
+      background-position: 0 0;
+      float: left;
+      overflow: hidden;
+    }
+
+    .slidesjs-pagination li a.active,
+    .slidesjs-pagination li a:hover.active {
+      background-position: 0 -13px
+    }
+
+<<<<<<< HEAD
+    .slidesjs-pagination li a:hover {
+      background-position: 0 -26px
+    }
+
+    #slides a:link,
+    #slides a:visited {
+      color: #333
+    }
+
+    #slides a:hover,
+    #slides a:active {
+      color: #9e2020
+    }
+
+    .navbar {
+      overflow: hidden
+    }
+>>>>>>> fede8de900bdda4aed17576652b2e988a75504a4
+>>>>>>> parent of eddddf1... Revert "WebShop + Kontakt"
+=======
+
+/*********************************************************************************/
+/* Two Columns                                                                 	 */
+/*********************************************************************************/
+
+	div.webshopItem
+	{
+		width : 800px;
+		height : 200px;
+		color :#ffa300;
+	}
+
+
+
+
+
+
+
+>>>>>>> parent of c9a285c... Revert fede8de..3addbfd
 	
