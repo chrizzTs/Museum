@@ -63,6 +63,15 @@
                 margin: 0px auto;
 
         }
+        
+	
+	#shopitem
+	{
+		width: 1200px;
+		background-color: aqua;
+		height: 300px;
+	}
+	
 
         
         textarea
@@ -324,15 +333,13 @@
                 
                 position: relative;
                 overflow: hidden;
-                padding: 10px 0em 10em 0em;
+                padding: 10px 0em 2em 0em;
                 background: url(images/bg01.jpg) repeat-x center top;
                 border-bottom: 20px solid rgba(0,0,0,.5);
         }
 
         #header
         {
-        position: absolute;
-        z-index:2;
         }
         
         
@@ -545,7 +552,7 @@
         #copyright
         {
                 overflow: hidden;
-                padding: 5em 0em;
+                padding: 1em 0em;
                 border-top: 1px solid rgba(255,255,255,0.08);
                 text-align: center;
         }
@@ -667,6 +674,13 @@
 height: 100px;
 }
 
+
+div.webshopItem
+	{
+		width : 800px;
+		height : 200px;
+		color :#ffa300;
+	}
 
 
 /*********************************************************************************/

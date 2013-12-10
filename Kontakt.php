@@ -28,13 +28,12 @@
 			</div>
 			<p>Lorem ipsum[...]</p>
 			<a href="mailto:c.mahlich@gmail.com?Subject=Museumsanfrage"target="_top" class="button">Pers&ouml;nlicher Kontakt</a> </div>
-		<div id="tbox2">
+				<div id="tbox2">
 			<div class="title">
 				<h2>Christopher Stumm</h2>
 			</div>
 			<p>Lorem ipsum[...]</p>
-			<a href="mailto:christopher@stumms.com?Subject=Museumsanfrage"target="_top" class="button"></a>Pers&ouml;nlicher Kontakt </div>
-		<div id="tbox3">
+			<a href="mailto:christopher@stumms.com?Subject=Museumsanfrage"target="_top" class="button">Pers&ouml;nlicher Kontakt</a> </div>		<div id="tbox3">
 			<div class="title">
 				<h2>Mattes Wieben</h2>
 			</div>
