@@ -7,9 +7,7 @@ $(document).ready(function(){
 
 });
 
-$("#submit").click(function() {
-$("#entries").load("guestBookEntries.php");
-});
+
 
 $(window).resize(function(){
 windowSize();
@@ -20,15 +18,16 @@ windowSize();
 //Funktionen..............
 
 function loadData(){
-	 $("#tbox2Entries").animate({opacity:"0", filter:"alpha(opacity=0)"}, 400, function(){
-	 $("#tbox2Entries").load("guestBookEntries.php",function(){
-	 $("#tbox2Entries").animate({opacity:"1", filter:"alpha(opacity=100)"}, 400);
+	 $("#col2Entries").animate({opacity:"0", filter:"alpha(opacity=0)"}, 400, function(){
+	 $("#col2Entries").load("guestBookEntries.php",function(){
+	 $("#col2Entries").animate({opacity:"1", filter:"alpha(opacity=100)"}, 400);
 	 });
 	 });
 	
 }
 
-$( "form" ).submit(function( event ) {
+// Kontaktformular Post und Echo Injection
+$( "#kontaktform" ).submit(function( event ) {
  	event.preventDefault();
  	
  	var name = $("#name").val();
@@ -48,9 +47,30 @@ $( "form" ).submit(function( event ) {
 
 
 
+//Gästebuch Eintrag Post und Echo Injection
+$( "#guestbookForm" ).submit(function( event ) {
+ 	event.preventDefault();
+ 	 
+ 	var name = $("input[name='name']").val();
+ 	var email = $("input[name='email']").val();
+ 	var eingabe = $("textarea[name='eingabe']").val();
+ 	 	
+
+   var posting = $.post( "addEntry.php", {name:name, email:email, eingabe:eingabe});
+   posting.done(function( data ) {
+	  $("#replyGuestbookEntry").html(data);
+	  loadData();
+	    
+	});
+
+	
+});
+
 
 function windowSize(){
  $(".container").css({"width": $(window).width()-40});
+ $(".container2").css({"width": $(window).width()-150});
+ 
 }
 
     $(function() {

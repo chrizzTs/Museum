@@ -1,15 +1,18 @@
 <?php
+$absendername = htmlspecialchars($_POST["name"]);
+$absendermail = $_POST["email"];
+$eingabe = htmlspecialchars($_POST["eingabe"]);
+
+if(!empty($absendername) and !empty($absendermail) and !empty($eingabe) and filter_var($absendermail, FILTER_VALIDATE_EMAIL))
+{
 $db = mysqli_connect("localhost", "admin", "admin", "guestbook");
 $name = $_POST['name'];
 $email = $_POST['email'];
-$post = $_POST['post'];
+$post = $_POST['eingabe'];
 
-if($name!='' &&  $email != '' && $post!=''){
-$eintragen = mysqli_query($db, "INSERT INTO entries (name, email, post) VALUES ('$name', '$email', '$post')");
+$eintragen = mysqli_query($db, "INSERT INTO entries (name, email, post) VALUES ('$absendername', '$absendermail', '$eingabe')");
+echo "Eintrag wurde versandt!";
 }
-
-header("Location: guestbook.php");
-die();
-
-
-php?>
+else
+echo  "<p style=\"color:red\">Eingabefehler, Versuchen sie es Nocheinmal</p>";
+?>

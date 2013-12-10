@@ -3,13 +3,12 @@
 	include "Header.php";
 ?>
 <div id="page-wrapper">
-	<div id="page" class="container">
+	<div id="page" class="container2">
 		<div class="title">
 			<h2>Kontaktdaten</h2>
 		</div>
-		<div id="replyPost">
-		</div>
-		<p>Bei jeglichen Fragen, Anmerkungen oder Anregungen kontaktieren Sie uns bitte gerne. Wir werden umgehend auf Ihr Anliegen eingehen.</p>
+
+		<p id="replyPost">Bei jeglichen Fragen, Anmerkungen oder Anregungen kontaktieren Sie uns bitte gerne. Wir werden umgehend auf Ihr Anliegen eingehen.</p>
 		<p> 
 			<form id="kontaktform">
 				<p>Ihr Name:<br /><input id="name" name="name" type="text" size="30" maxlength="30" value="Optimus Prime"/></p>
@@ -22,7 +21,7 @@
 	</div>
 </div>
 <div id="wrapper">
-	<div id="three-column" class="container">
+	<div id="three-column" class="container2">
 		<div><span class="arrow-down"></span></div>
 		<div id="tbox1">
 			<div class="title">

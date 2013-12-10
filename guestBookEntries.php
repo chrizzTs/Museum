@@ -7,7 +7,7 @@ $count = 1;
 
 while($row = mysqli_fetch_object($ergebnis))
 {
-	echo "<p>", $count, "<br>\n";
+	echo "<p><b>", $count, "</b><br>\n";
 	echo $row->date, "<br>\n";
 	echo $row->name, "<br>\n";
 	echo $row->email, "<br>\n";
