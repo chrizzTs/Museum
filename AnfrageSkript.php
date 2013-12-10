@@ -1,8 +1,3 @@
-<head>
-<meta name="robots" content="noindex">
-</head>
-<body>
-
 <?php
 $empfaenger = "matswn77@gmail.com";
 $absendername = htmlspecialchars($_POST["name"]);
@@ -38,18 +33,17 @@ if(!empty($absendername) and !empty($absendermail) and !empty($eingabe) and filt
 mail($empfaenger, $betreff, $text, "From: $absendername <$absendermail>");
 mail($absendermail, "Ihre Anfrage", $usertext);
 
-echo "<h1>Folgende Daten wurden &uuml;bermittelt.</h1>"
-. "<h2><a href=Index.php>Klicken sie hier um zur Startseite zur&uuml;ckzukeren</a></h2>"
-. "<table style='border: 1px red solid'>"
-. "<tr><th>Ihr Name:</th></tr>"
-. "<tr><td>$absendername</td></tr>"
-. "<tr><th>Ihre Mailadresse:</th></tr>"
-. "<tr><td>$absendermail</td></tr>"
-. "<tr><th>Ihre Nachricht an mich:</th></tr>"
-. "<tr><td>$eingabe</td></tr>"
-. "</table>";
+echo "<div style='border: 1px red solid'>"
+. "<b>Ihr Name: </b><br/>"
+. "$absendername <br/>"
+. "<b>Ihre Mailadresse: </b><br/>"
+. "$absendermail <br/>"
+. "<b>Ihre Nachricht an mich: </b><br/>"
+. "$eingabe <br/>"
+. "</div>";
+
 }
 
 else
-echo "Eingabe nicht erfolgreich, Versuchen sie es Nocheinmal<meta http-equiv='refresh' content='3; URL=index.html'>";
+echo  "<p>Eingabe nicht erfolgreich, Versuchen sie es Nocheinmal</p>";
 ?>

@@ -7,12 +7,14 @@
 		<div class="title">
 			<h2>Kontaktdaten</h2>
 		</div>
+		<div id="replyPost">
+		</div>
 		<p>Bei jeglichen Fragen, Anmerkungen oder Anregungen kontaktieren Sie uns bitte gerne. Wir werden umgehend auf Ihr Anliegen eingehen.</p>
 		<p> 
-			<form action="/AnfrageSkript.php" method="post">
-				<p>Ihr Name:<br /><input name="name" type="text" size="30" maxlength="30" value="Optimus Prime"/></p>
-				<p>Gültige Mail Adresse:<br /><input name="email" type="text" size="30" maxlength="40"/></p>
-				<p>Ihre Nachricht an mich:<br /><textarea name="eingabe" cols="50" rows="10"></textarea></p>
+			<form id="kontaktform">
+				<p>Ihr Name:<br /><input id="name" name="name" type="text" size="30" maxlength="30" value="Optimus Prime"/></p>
+				<p>Gültige Mail Adresse:<br /><input id="email" name="email" type="text" size="30" maxlength="40"/></p>
+				<p>Ihre Nachricht an mich:<br /><textarea id="eingabe" name="eingabe" cols="50" rows="10"></textarea></p>
 				<input type="submit" value="Kontaktanfrage versenden"/>
 			</form>
 		</p>

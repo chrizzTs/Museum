@@ -28,9 +28,26 @@ function loadData(){
 	
 }
 
-$("#name").click(function() {
+$( "form" ).submit(function( event ) {
+ 	event.preventDefault();
+ 	
+ 	var name = $("#name").val();
+ 	var email = $("#email").val();
+ 	var eingabe = $("#eingabe").val();
 
+   var posting = $.post( "AnfrageSkript.php", {name:name, email:email, eingabe:eingabe});
+   posting.done(function( data ) {
+	  $("#replyPost").html(data);
+	  $("#kontaktform").hide("fast");
+	 
+	  
+	});
+
+	
 });
+
+
+
 
 function windowSize(){
  $(".container").css({"width": $(window).width()-40});
