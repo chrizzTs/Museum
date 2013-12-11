@@ -45,5 +45,5 @@ echo "<div style='border: 1px red solid'>"
 }
 
 else
-echo  "<p>Eingabe nicht erfolgreich, Versuchen sie es Nocheinmal</p>";
+echo  "<p style="color: red">Eingabe nicht erfolgreich, Versuchen sie es Nocheinmal</p>";
 ?>
