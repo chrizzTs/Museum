@@ -4,7 +4,6 @@ $(document).ready(function(){
 
 	loadData();
 	windowSize();
-
 });
 
 
@@ -42,6 +41,18 @@ $( "#kontaktform" ).submit(function( event ) {
 	  
 	});
 
+	
+});
+
+//Asynchrone Webshop Abfrage
+
+$("#AjaxWebShopAbfrage").click(function(event) {
+
+	alert("hat geklappt");
+	var posting = $.post( "webshopSkript.php");
+	posting.done(function (data ) {
+	$("#wrapper").append(data);
+	});
 	
 });
 

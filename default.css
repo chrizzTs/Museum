@@ -465,6 +465,7 @@
                 overflow: hidden;
                 padding: 0em 0em 5em 0em;
                 background: #FFF;
+                max-width: 4000px;
         }
 
         #wrapper1
@@ -881,4 +882,21 @@ div.webshopItem
     .navbar {
       overflow: hidden
     }
-        
+    
+/******************************************************/
+/*Neu von Mattes für den Button mehr anzeigen   */
+/*****************************************************/
+
+	#mehranzeigen{
+		vertical-align: center;
+		text-align: center;
+		width: 20%;
+		height: 30px;
+		margin-top: 40px;
+	}
+	
+	#forButtonMehrAnzeigen{
+		width: 100%;
+		height:30px;
+		text-align: center;
+	}

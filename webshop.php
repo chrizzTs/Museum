@@ -14,8 +14,9 @@
 	<p> <?php
 		$res = mysql_query("SELECT * FROM products");
 		$num = mysql_num_rows($res);
-		while($dsatz = mysql_fetch_assoc($res))
+		for($i =0; $i<$num-2;$i++)
 		{
+			$dsatz = mysql_fetch_assoc($res);
 			$tmp = $dsatz["name"];
 			
 			echo '<form action="/warenkorb.php?action=insert" method="post">'
@@ -24,13 +25,13 @@
 					.'<input style="float: right;" type="submit" value="In den Warenkorb legen"/>';
 					if($tmp == 'Ticket')
 					{
-						echo '<input type="text" name="artikel" value=Ticket style="position: fixed; left: -9999;"></input>';
+						echo '<input type="text" name="artikel" value=Ticket style="width=5000px;"></input>';
 					} else if ($tmp == 'Kinderticket'){
-						echo '<input type="text" name="artikel" value=Kinderticket style="position: fixed; left: -9999;"></input>';
+						echo '<input type="text" name="artikel" value=Kinderticket style="width=5000px;"></input>';
 					} else if ($tmp == 'Gruppenticket') {
-						echo '<input type="text" name="artikel" value=Gruppenticket style="position: fixed; left: -9999;"></input>';
+						echo '<input type="text" name="artikel" value=Gruppenticket style="width=5000px;"></input>';
 					} else if ($tmp =='Modellauto Twingo') {
-						echo '<input type="text" name="artikel" value=Modellauto Twingo style="position: fixed; left: -9999;"></input>';
+						echo '<input type="text" name="artikel" value=Modellauto Twingo style="width=5000px;"></input>';
 					}
 					
 					echo'</br>'.$dsatz["price"]."€"
@@ -43,6 +44,9 @@
 	?>
 	</p>
 </div>
+<div id="forButtonMehranzeigen">
+		<input type="button" value="Mehr anzeigen" id="AjaxWebShopAbfrage">
+	</div>
 <?php
 	include "Footer.php";
 ?>

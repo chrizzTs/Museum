@@ -6,6 +6,6 @@
 		setcookie("user", $tmp, time()+60*60*24*29, "/");
 	} else {
 		
-		echo("ist bereits gesetzt");
+		echo("");
 	}
 ?>
