@@ -25,13 +25,13 @@
 					.'<input style="float: right;" type="submit" value="In den Warenkorb legen"/>';
 					if($tmp == 'Ticket')
 					{
-						echo '<input type="text" name="artikel" value=Ticket style="width=5000px;"></input>';
+						echo '<input type="hidden" name="artikel" value=Ticket style="position: absolute; left: -9999;"></input>';
 					} else if ($tmp == 'Kinderticket'){
-						echo '<input type="text" name="artikel" value=Kinderticket style="width=5000px;"></input>';
+						echo '<input type="hidden" name="artikel" value=Kinderticket style="position: absolute; left: -9999;"></input>';
 					} else if ($tmp == 'Gruppenticket') {
-						echo '<input type="text" name="artikel" value=Gruppenticket style="width=5000px;"></input>';
+						echo '<input type="hidden" name="artikel" value=Gruppenticket style="position: absolute; left: -9999;"></input>';
 					} else if ($tmp =='Modellauto Twingo') {
-						echo '<input type="text" name="artikel" value=Modellauto Twingo style="width=5000px;"></input>';
+						echo '<input type="hidden" name="artikel" value=Modellauto Twingo style="position: absolute; left: -9999;"></input>';
 					}
 					
 					echo'</br>'.$dsatz["price"]."€"

@@ -59,10 +59,11 @@ $( "#kontaktform" ).submit(function( event ) {
 
 $("#AjaxWebShopAbfrage").click(function(event) {
 
-	alert("hat geklappt");
 	var posting = $.post( "webshopSkript.php");
 	posting.done(function (data ) {
-	$("#wrapper").append(data);
+	var $new = data;
+	$('#wrapper').append($new);
+	$new.show('slow');
 	});
 	
 });
