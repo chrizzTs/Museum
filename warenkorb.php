@@ -1,6 +1,5 @@
 <?php
 	include("config.php");
-	include "Header.php";
 	
 	if(!isset($_GET["action"]))$_GET["action"] ="insert";
 	
@@ -13,6 +12,8 @@
 		echo"COOKIE NICHT GESETZT";
 	}
 	
+	include "Header.php"; #Header erst nach den Cookie-Tests
+
 	if($_GET["action"]=="insert")
 	{
 		$artikel = $_POST["artikel"];
@@ -50,46 +51,46 @@
 	}
 	
 ?>
-		<div id="page-wrapper">
-			<div id="page" class="container">
-				<div class="title">
-					<h2>Willkommen in unserem Webshop</h2>
-				</div>
-				<p>Lorem ipsum[...]</p>
-			</div>
+<div id="page-wrapper">
+	<div id="page" class="container">
+		<div class="title">
+			<h2>Willkommen in unserem Webshop</h2>
 		</div>
-		<div id="wrapper">
-			<table width=500px border = "2">
-				<tr>
-					<td> Artikel </td>
-					<td> Menge </td>
-					<td> Einzelpreis </td>
-					<td> Gesamtpreis </td>
-				</tr>
-				<?php
-					$result = mysql_query("SELECT * FROM warenkorb WHERE sid ='$sid'");
-					if(!$result) echo mysql_error();
-					$gesamtpreis = 0;
-					while($row = mysql_fetch_assoc($result))
-					{
-						$name = $row["products"];
-						$preis = $row["preis"];
-						echo "<tr>";
-							echo "<td>".$name."</td>";
-							echo "<td>".$row["menge"]."</td>";							
-							echo "<td>".$preis."</td>";							
-							echo "<td>".$row["menge"]*$preis."</td>";							
-						echo "</tr>";
-						$gesamtpreis += $gesamtpreis + $row["menge"]* $preis;
-					}
-					echo "<tr><td align='right' colspan='4'>$gesamtpreis</td></tr>";
-				?>
-			<form action ="kaufabschluss.php?action=buy" method="post">
-			<input type="submit" value="Kaufen">
-			</form>
-			<a href="webshop.php">Weitershoppen</a>
-		</div>
-				
+		<p>Lorem ipsum[...]</p>
+	</div>
+</div>
+<div id="wrapper">
+	<table width=500px border = "2">
+		<tr>
+			<td> Artikel </td>
+			<td> Menge </td>
+			<td> Einzelpreis </td>
+			<td> Gesamtpreis </td>
+		</tr>
+		<?php
+			$result = mysql_query("SELECT * FROM warenkorb WHERE sid ='$sid'");
+			if(!$result) echo mysql_error();
+				$gesamtpreis = 0;
+				while($row = mysql_fetch_assoc($result))
+				{
+					$name = $row["products"];
+					$preis = $row["preis"];
+					echo "<tr>";
+						echo "<td>".$name."</td>";
+						echo "<td>".$row["menge"]."</td>";							
+						echo "<td>".$preis."</td>";							
+						echo "<td>".$row["menge"]*$preis."</td>";							
+					echo "</tr>";
+					$gesamtpreis += $gesamtpreis + $row["menge"]* $preis;
+				}
+			echo "<tr><td align='right' colspan='4'>$gesamtpreis</td></tr>";
+		?>
+	<form action ="kaufabschluss.php?action=buy" method="post">
+		<input type="submit" value="Kaufen">
+	</form>
+	<a href="webshop.php">Weitershoppen</a>
+</div>
+
 <?php
 	include "Footer.php";
 ?>

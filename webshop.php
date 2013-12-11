@@ -33,13 +33,9 @@
 						echo '<input type="text" name="artikel" value=Modellauto Twingo style="position: fixed; left: -9999;"></input>';
 					}
 					
-									
-					
-					
-					
 					echo'</br>'.$dsatz["price"]."€"
 					.'</br>'
-					.'<span width=100% style =" text-align: right">Menge:</span>'
+					.'<span width=100% placeholder:"Menge" style ="text-align: right;">Menge:</span>'
 					.'<input style="float: right;" type="text" size="10" name="menge" maxlength="2"> </input>'
 				."</div>"
 				.'</form>';

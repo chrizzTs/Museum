@@ -14,7 +14,6 @@ include "Header.php";
 		</p>
 	</div>
 </div>
-<div id="wrapper">
 <?php
 	$sid = $_COOKIE["user"];
 	$result = mysql_query("SELECT * FROM warenkorb WHERE sid = '$sid'");
@@ -25,8 +24,7 @@ include "Header.php";
 	}
 	if(!mysql_query("INSERT INTO verkauft VALUES ('', '$sid', '$betrag', 'FALSE')")) echo mysql_error();
 	mysql_query("DELETE FROM warenkorb WHERE sid = '$sid'");
-?>
-
+	?>
 <?php
 
 include "Footer.php";
