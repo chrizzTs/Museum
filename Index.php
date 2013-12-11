@@ -7,6 +7,8 @@
 		<div class="title">
 			<h2>Wilkommen</h2>			
 		</div>
+	</div>
+	<div id="wrapper">
 		<div id="slides" class="container2">
 			<img src="images/auto1.jpg">
 			<img src="images/auto2.jpg">

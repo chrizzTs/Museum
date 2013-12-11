@@ -13,6 +13,17 @@ windowSize();
 });
 
 
+$( "#guestbookAdmin" ).click(function( event ) {
+	  $("#wrapper").load("getGuestBookServletContent.php");
+	   
+	});
+
+
+
+
+
+
+
 
 //Funktionen..............
 
