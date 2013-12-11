@@ -31,8 +31,7 @@ $usertext = "Sehr geehrte/r Herr/Frau $absendername,
 if(!empty($absendername) and !empty($absendermail) and !empty($eingabe) and filter_var($absendermail, FILTER_VALIDATE_EMAIL))
 {
 mail($empfaenger, $betreff, $text, "From: $absendername <$absendermail>");
-mail($absendermail, "Ihre Anfrage", $usertext);		//joooooooolkasndlkasndlkasndklasndklnasldnaslkdnkl
-
+mail($absendermail, "Ihre Anfrage", $usertext);	
 
 echo "<div style='border: 1px red solid'>"
 . "<b>Ihr Name: </b><br/>"
@@ -46,5 +45,5 @@ echo "<div style='border: 1px red solid'>"
 }
 
 else
-echo  "<p style="color: red">Eingabe nicht erfolgreich, Versuchen sie es Nocheinmal</p>";
+echo  "<p style=\"color: red\">Eingabe nicht erfolgreich, Versuchen sie es Nocheinmal</p>";
 ?>
