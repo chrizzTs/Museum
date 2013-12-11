@@ -31,11 +31,8 @@ $usertext = "Sehr geehrte/r Herr/Frau $absendername,
 if(!empty($absendername) and !empty($absendermail) and !empty($eingabe) and filter_var($absendermail, FILTER_VALIDATE_EMAIL))
 {
 mail($empfaenger, $betreff, $text, "From: $absendername <$absendermail>");
-<<<<<<< HEAD
 mail($absendermail, "Ihre Anfrage", $usertext);		//joooooooolkasndlkasndlkasndklasndklnasldnaslkdnkl
-=======
-mail($absendermail, "Ihre Anfrage", $usertext);		//joooooooop
->>>>>>> dfa7d4b75ec958fb6e030fd4436c61cf0aff7d69
+
 
 echo "<div style='border: 1px red solid'>"
 . "<b>Ihr Name: </b><br/>"
