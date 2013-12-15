@@ -1,7 +1,0 @@
-AuthType Basic  
-AuthName "Service-Bereich."  
-AuthUserFile /htpasswd  
-
-order deny,allow
-allow from all
-require valid-user

@@ -13,18 +13,6 @@ windowSize();
 });
 
 
-$( "#guestbookAdmin" ).click(function( event ) {
-	  $("#wrapper").load("getGuestBookServletContent.php");
-	   
-	});
-
-
-
-
-
-
-
-
 //Funktionen..............
 
 function loadData(){
@@ -35,6 +23,27 @@ function loadData(){
 	 });
 	
 }
+
+// Login Echo Injection
+$( "#loginForm" ).submit(function( event ) {
+ 	event.preventDefault();
+ 	
+ 	var username = $("#username").val();
+ 	var password = $("#password").val();
+
+   var posting = $.post( "admin/login.php", {username:username, password:password});
+   posting.done(function( data ) {
+   	if(!(data =="Success")){
+		  $("#replyPost").html(data);
+   	}else {
+	   	window.location = "admin/index.php"		
+   	}
+ 
+	  
+	});
+
+	
+});
 
 // Kontaktformular Post und Echo Injection
 $( "#kontaktform" ).submit(function( event ) {
