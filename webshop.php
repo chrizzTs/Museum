@@ -1,5 +1,6 @@
 <?php
 	include("config.php");
+	setcookie("itemCount", 2, time()+60*60*24*29, "/");
 	include "Header.php";
 ?>
 <div id="page-wrapper">
@@ -44,9 +45,10 @@
 	?>
 	</p>
 </div>
+
 <div id="forButtonMehranzeigen">
-		<input type="button" value="Mehr anzeigen" id="AjaxWebShopAbfrage">
-	</div>
+		<input type="button" value="Mehr anzeigen" id="AjaxWebShopAbfrage">		<!-- Ruft id aus der default.js auf, die ruft 	-->	</div>																			<!--webshopskript auf -->				
+
 <?php
 	include "Footer.php";
 ?>

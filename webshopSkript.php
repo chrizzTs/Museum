@@ -1,7 +1,9 @@
 <?php
 	include("config.php");
+	$itemCount = $_COOKIE["itemCount"];
+	setcookie("itemCount", $itemCount+1, time()+60*60*24*29, "/");		//Dieser Cookie merkt sich, welches Item aus der DB 																				ausgegeben werden muss.
 	
-	$res = mysql_query("SELECT * FROM products");
+	$res = mysql_query("SELECT * FROM products WHERE id='$itemCount'");
 	$num = mysql_num_rows($res);
 	$dsatz = mysql_fetch_assoc($res);
 
@@ -25,5 +27,5 @@
 					.'Menge: '
 					.'<input style="float: right;" type="text" size="10" name="menge" maxlength="2"> </input>'
 				."</div>"
-		.'</form>';	
+		.'</form>';
 ?>
