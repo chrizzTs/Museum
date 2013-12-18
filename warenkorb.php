@@ -18,7 +18,6 @@
 	{
 		$artikel = $_POST["artikel"];
 		$menge = $_POST["menge"];
-
 		
 		if((int)$menge == "0")
 		{
@@ -32,7 +31,7 @@
 			
 			$id = $show["id"];
 			$preis = $show["price"];
-			
+						
 			//überprüfen ob das produkte zu der Session schon im Warenkorb liegt
 			$num = mysql_num_rows(mysql_query("SELECT wkid FROM warenkorb WHERE pid='$id' AND sid='$sid'"));
  			#echo mysql_num_rows(mysql_query("SELECT * FROM warenkorb WHERE pid='$id' AND sid='$sid'"));  ich glaube das war nur zum Test
@@ -40,7 +39,7 @@
 
 			
 			if($num =="0"){
-				$result = mysql_query("INSERT INTO webshop.warenkorb VALUES('','$sid','$id','$artikel','$menge','$preis')");
+				$result = mysql_query("INSERT INTO warenkorb VALUES('','$sid','$id','$artikel','$menge','$preis')");
 				if(!$result) echo "Ungültige Anfrage".mysql_error();
 			} else {
 				$result = mysql_query("UPDATE warenkorb SET menge=menge+$menge WHERE pid='$id'");
@@ -59,8 +58,8 @@
 		<p>Lorem ipsum[...]</p>
 	</div>
 </div>
-<div id="wrapper">
-	<table width=500px border = "2">
+<div id="wrapper" style="text-align: center;">
+	<table width=500px border = "2" align="center">
 		<tr>
 			<td> Artikel </td>
 			<td> Menge </td>
@@ -78,12 +77,13 @@
 					echo "<tr>";
 						echo "<td>".$name."</td>";
 						echo "<td>".$row["menge"]."</td>";							
-						echo "<td>".$preis."</td>";							
-						echo "<td>".$row["menge"]*$preis."</td>";							
+						echo "<td>".$preis."€</td>";							
+						echo "<td>".$row["menge"]*$preis."€</td>";							
 					echo "</tr>";
 					$gesamtpreis += $gesamtpreis + $row["menge"]* $preis;
 				}
-			echo "<tr><td align='right' colspan='4'>$gesamtpreis</td></tr>";
+			echo "<tr><td align='right' colspan='4'>$gesamtpreis €</td></tr>".
+		'</table>';
 		?>
 	<form action ="kaufabschluss.php?action=buy" method="post">
 		<input type="submit" value="Kaufen">

@@ -67,7 +67,13 @@ $( "#kontaktform" ).submit(function( event ) {
 //Asynchrone Webshop Abfrage
 
 $("#AjaxWebShopAbfrage").click(function(event) {
-
+	event.preventDefault();		//TEST!!
+	var parent = document.getElementById("wrapper");
+	var kids = parent.childNodes.length;
+	if(parent.childNodes.length == 4)
+	{
+		$("#AjaxWebShopAbfrage").hide();
+	}
 	var posting = $.post( "webshopSkript.php");
 	posting.done(function (data ) {
 	var $new = data;
@@ -76,6 +82,23 @@ $("#AjaxWebShopAbfrage").click(function(event) {
 	});
 	
 });
+
+//Registrieren und LogIn
+
+$('#ImShopRegistrieren').click(function(event){
+	event.preventDefault();
+	$("#wrapper").load("Test.html");
+	$("#forButtonMehrAnzeigen").html('');
+	
+
+});
+
+$('#ImShopEinloggen').click(function(event){
+	event.preventDefault();
+	$("#wrapper").empty();
+	
+});
+
 
 
 
@@ -117,5 +140,4 @@ function windowSize(){
         }
       });
     });
-
 
