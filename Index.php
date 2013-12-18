@@ -9,7 +9,7 @@
 		</div>
 	</div>
 	<div id="wrapper">
-		<div id="slides" class="container2">
+		<div id="slides" class="container2" style="width:300px; height:200px;">
 			<img src="images/auto1.jpg">
 			<img src="images/auto2.jpg">
 			<img src="images/auto3.jpg">

@@ -14,6 +14,7 @@
 	</div>
 </div>
 <div id="wrapper">
+	<div id="vonAnfangAn">
 	 <?php
 		$res = mysql_query("SELECT * FROM products");
 		$num = mysql_num_rows($res);
@@ -45,6 +46,17 @@
 				.'</form>';
 		}
 	?>
+	</div>
+	<div id="wirdZumRegistrierenGeladen" style="display: none;">
+		<?php
+			include("Registrieren.html");
+		?>
+	</div>
+	<div id="wirdZumLoginGeladen" style="display: none;">
+		<?php
+			include("Login.html");
+		?>
+	</div>
 </div>
 
 <div id="forButtonMehrAnzeigen">
