@@ -108,6 +108,7 @@ $('#ImShopEinloggen').click(function(event){
 //ruft das PHP-Skript auf, das den neuen User in der Datenbank anlegt
 $("#registrierungAbschicken").click(function(event){
  	event.preventDefault();
+ 	setzeFarbenZurueck();
  	var vorname = $("input[name='vorname']").val(); 
 	var	nachname = $("input[name='nachname']").val();	
 	var	username = $("input[name='username']").val();
@@ -210,6 +211,19 @@ $("#registrierungAbschicken").click(function(event){
 		}
 	}
 });
+
+function setzeFarbenZurueck()
+{
+	$('#inputVorname').css('color','black');
+	$('#inputNachname').css('color','black');
+	$('#inputUsername').css('color','black');
+	$('#inputStrasse').css('color','black');
+	$('#inputWohnort').css('color','black');
+	$('.inputTele').css('color','black');
+	$('.inputPasswort').css('color','black');
+	$('#inputTele').css('color','black');
+	$('#inputPLZ').css('color','black');
+};
 
 //Überprüft die Login Daten, die der User eingegeben hat
 
