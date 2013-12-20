@@ -8,6 +8,7 @@
 			<h2>Wilkommen</h2>			
 		</div>
 	</div>
+
 	<div id="wrapper" class="container">
 		<div id="slides">
 			<img src="images/auto1.jpg">
