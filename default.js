@@ -123,8 +123,10 @@ $( "#guestbookForm" ).submit(function( event ) {
 
 
 function windowSize(){
- $(".container").css({"width": $(window).width()-40});
- $(".container2").css({"width": $(window).width()-150});
+ $("#header-wrapper").css({"width": $(window).width()});
+
+
+
  
 }
 

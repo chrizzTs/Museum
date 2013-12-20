@@ -2,7 +2,7 @@
         {
                 height: 100%;
         }
-        
+       
         body
         {
                 margin: 0px;
@@ -55,14 +55,14 @@
 
         .container
         {
-                margin: 0px auto;
-                width: 500px;
+               
+                padding-left: 7em; /* Innenabstand dass nicht bis zum Seitenrand geschrieben wird */
+                padding-right: 7em;
+                
+               
         }
-        .container2{
-                width: 800px;
-                margin: 0px auto;
+              
 
-        }
         
 	
 	#shopitem
@@ -74,8 +74,6 @@
 	
 
         
-        textarea
-        {}
         
         
  /*********************************************************************************/
@@ -118,16 +116,13 @@
                         form select,
                         form textarea
                         {
-                                position: relative;
+                                
                                 -webkit-appearance: none;
-                                display: block;
                                 border: 0;
                                 background: #fff;
                                 background: rgba(255,255,255,0.75);
-                                width: 100%;
                                 border-radius: 0.50em;
                                 margin: 1em 0em;
-                                padding: 1.50em 1em;
                                 box-shadow: inset 0 0.1em 0.1em 0 rgba(0,0,0,0.05);
                                 border: solid 1px rgba(0,0,0,0.15);
                                 -moz-transition: all 0.35s ease-in-out;
@@ -155,7 +150,7 @@
                                 
                                 form textarea
                                 {
-                                        min-height: 12em;
+                                        
                                 }
 
                                 form .formerize-placeholder
@@ -198,7 +193,7 @@
 	table-layout:fixed;
 	text-align:left;
 	vertical-align:top;
-	margin:auto;
+	margin:0 auto;
 	width:100%;
 	
 }
@@ -206,6 +201,7 @@
 #guenstbookTable td{
 	vertical-align:top;
 }
+
 
 
 
@@ -310,14 +306,14 @@
         .button
         {
                 display: inline-block;
-                margin-top: 2em;
+                margin-top: 0.5em;
                 padding: 1em 2em 1em 2em;
                 background: #ff8a0e;
                 line-height: 1.8em;
                 text-decoration: none;
                 text-transform: uppercase;
                 font-weight: 700;
-                font-size: 1em;
+                font-size: 0.8em;
                 color: #FFF;
         }
         
@@ -367,11 +363,14 @@
         #header-wrapper
         {        
                 
-                position: relative;
-                overflow: hidden;
-                padding: 10px 0em 2em 0em;
+                position:fixed; /*Header oben links bei 0,0 fixiert */
+                left:0px; top:0px;
+                padding: 0.5em 0.5em 0.5em 0.5em;
                 background: url(images/bg01.jpg) repeat-x center top;
-                border-bottom: 20px solid rgba(0,0,0,.5);
+                border-bottom: 15px solid rgba(0,0,0,.5);
+                height: 140px;
+                z-index: 100;
+                
         }
 
         #header
@@ -391,10 +390,9 @@
         #logo h1
         {
                 display: inline-block;
-                margin-bottom: 0.20em;
-                padding: 0.20em 0.9em;
+                padding: 0.10em 0.9em;
                 background: #000;
-                font-size: 3.5em;
+                font-size: 3em;
         }
         
         #logo a
@@ -421,43 +419,69 @@
 /*********************************************************************************/
 /* Menu */
 /*********************************************************************************/
-
-        #menu
+		
+		#menu
+		{
+		}
+		
+        #menu a
         {
-        }
-        
-        #menu ul
-        {
-                display: inline-block;
-                padding: 0em 2em;
-                background: #ff8a0e;
-                text-align: center;
-        }
-        
-        #menu li
-        {
-                display: inline-block;
-        }
-        
-        #menu li a, #menu li span
-        {
-                display: inline-block;
-                padding: 1.3em 1.5em;
                 text-decoration: none;
+                color: #FFF;
                 font-size: 0.90em;
                 font-weight: 600;
-                text-transform: uppercase;
-                outline: 0;
-                color: #FFF;
+				text-transform: uppercase;
+				display: block;
+				padding: 1.1em 1em; /* Padding des Links, damit nicht nur Beschriftung geklcikt werden kann sondern komplette Bock verlinkt ist */
+
         }
         
-        #menu li:hover a, #menu li.active a, #menu li.active span
-        {
+       
+        
+        /*Verbinden der einzelnen Menüpunkte zu einer Leiste*/
+       #navigation li
+        {    
+                background: #ff8a0e;
+                text-align: center;
+                position: relative;
+                float: left;
+                list-style: none;              
         }
         
-        #menu .current_page_item a
+     
+        
+        #exponateListe
         {
-                color: #FFF;
+			
+        position: absolute;  
+        display: none; /*Verstecken des Untermenüs */
+		   		
+        }
+        
+        /*Formatierung Links in dem Untermenü*/
+        #exponateListe a
+        {
+			padding: 0.5em 2em; /* Höhe und Breite des Untermenüs */
+        }
+       
+
+
+		#exponateListe li
+		{
+			float: none; /* Vertikale Ausrichtung des Untermenüs */
+			display: block;  
+			     
+        }
+        
+        /*Hover Effeckt Farbe ändern beim drüber streichen */
+        #navigation li:hover{
+	        background: #ffa442;
+	        display:block;
+        }
+        
+       /*Hover Effeckt Untermenüg ausklappen beim drüber streichen */
+        #navigation li:hover ul{
+	        display:block;
         }
         
 
@@ -476,20 +500,31 @@
 
         #wrapper
         {
-                overflow: hidden;
-                padding: 0em 0em 5em 0em;
+                
+                
                 background: #FFF;
                 max-width: 4000px;
+                margin: 0 auto;
+                text-align: center;
+                
+                
+                
+               
         }
+        
+     
 
         #wrapper1
         {
-                background: #FFF;
-                
+
+                min-height: 150px;        
+                margin: 0 auto;
+                text-align: center;
+                              
         }
 
         #wrapper2
-        {
+        {           
         }
 
         #wrapper3
@@ -506,7 +541,7 @@
 
         #welcome
         {
-                overflow: hidden;
+                
                 width: 1000px;
                 padding: 8em 100px 0em 100px;
                 text-align: center;
@@ -535,16 +570,24 @@
 
         #page-wrapper
         {
-                overflow: hidden;
+                
+                
                 background: #F3F3F3;
-                padding: 3em 0em;
                 text-align: center;
+                margin:0 auto;
+                margin-top: 140px; /*Den Seiteninhalt um 140 px nach unten geschoben (höhe des Headers */
+                padding-top: 3em;
+                padding-bottom: 3em;
+                
+                
         }
 
         #page
         {
-        width: 300px;
+        
         }
+        
+        
 
 /*********************************************************************************/
 /* Content */
@@ -589,7 +632,7 @@
 
         #copyright
         {
-                overflow: hidden;
+                
                 padding: 1em 0em;
                 border-top: 1px solid rgba(255,255,255,0.08);
                 text-align: center;
@@ -614,7 +657,7 @@
 
         #newsletter
         {
-                overflow: hidden;
+            
                 padding: 8em 0em;
                 background: #EDEDED;
                 text-align: center;
@@ -689,24 +732,21 @@
 /*********************************************************************************/
 
 #two-column{
+
+  		
+		overflow: hidden;
         text-align:left;
-        border-style:solid;
-        border-width:5px;
+        margin: 0px auto;
+       
+
 }
-#two-column #tbox1{
-        width: 450;
-        border-style:solid;
-        border-width:5px;
+#two-column div{
+       	margin-left: 60px;
         float: left;
         
 }
 
-#two-column #tbox2{
-        border-style:solid;
-        border-width:5px;
-        float: right;
 
-}
 
 #entryField{
 height: 100px;
@@ -727,13 +767,14 @@ div.webshopItem
 
         #three-column
         {
-                overflow: hidden;
-                text-align: center;
+			margin:0px auto;
+			width: 750px;
+                
         }
         
         #three-column h2
         {
-                margin: 1em 0em;
+               
                 text-transform: uppercase;
                 font-size: 1.5em;
                 font-weight: 700;
@@ -760,9 +801,9 @@ div.webshopItem
         #three-column #tbox2,
         #three-column #tbox3
         {
-                float: left;
-                width: 320px;
-                padding: 80px 40px 80px 40px;
+                float:left;
+                width: 250px;
+                padding: 20px 0px 20px 0px;
         }
         
         #three-column .title
@@ -773,7 +814,7 @@ div.webshopItem
         
         #three-column .title h2
         {
-                font-size: 1.60em;
+                font-size: 1.2em;
         }
         
         #three-column .title .byline
@@ -791,12 +832,13 @@ div.webshopItem
 /* Slide Show         */
 /*********************************************************************************/
 
+	#slides
+	{
+		width: 800px;
+		margin: 0px auto;
+	}
 
-    #slides {
-      display: none
-              margin: 0px auto;
-                 
-    }
+ 
 
     #slides .slidesjs-navigation {
       margin-top:5px;

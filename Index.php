@@ -2,14 +2,14 @@
 	$title = "Kontakt";
 	include "Header.php";
 ?>
-<div id="page-wrapper">
+<div id="page-wrapper" >
 	<div id="page" class="container">
 		<div class="title">
 			<h2>Wilkommen</h2>			
 		</div>
 	</div>
-	<div id="wrapper">
-		<div id="slides" class="container2">
+	<div id="wrapper" class="container">
+		<div id="slides">
 			<img src="images/auto1.jpg">
 			<img src="images/auto2.jpg">
 			<img src="images/auto3.jpg">

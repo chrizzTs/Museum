@@ -3,37 +3,41 @@
 	include "Header.php";
 ?>
 <div id="page-wrapper">
-	<div id="page" class="container2">
+	<div id="page" class="container">
 		<div class="title">
 			<h2>Gästebuch</h2>
 		</div>
-		
-	<table id="guenstbookTable">
-	<tr><td>
-	<p id="replyGuestbookEntry"></p>
-		<form id="guestbookForm">
+	</div>
+	
+	<div id="wrapper" class ="container">
+		<div id="two-column">
+			<div>
+			<p id="replyGuestbookEntry"></p>
+			<form id="guestbookForm">
 			<table>
 				<tr>
 					<td>Name: </td> 
-					<td><input  type="text" size="30" name="name" placeholder="Max Muster"><td>
+					<td><input  type="text" size="62" name="name" placeholder="Max Muster"><td>
 				</tr>
 				<tr>
 					<td>E-Mail:</td>
-					<td> <input  type="text" name="email" placeholder="max@muster.de"></td>
+					<td> <input  type="text" size="62" name="email" placeholder="max@muster.de"></td>
 				</tr>
 				<tr>
 					<td>Eintrag:</td>
-					<td><textarea value"Ihr Eintrag" name="eingabe" cols="30" rows="10" placeholder="Bitte 	geben Sie Ihren Gästebucheintrag ein."></textarea> </td>
+					<td><textarea value"Ihr Eintrag" name="eingabe" 
+						placeholder="Bitte 	geben Sie Ihren Gästebucheintrag ein." cols="45" rows="12"></textarea> </td>
 				</tr>
 			</table>
 			<input id="submit" type="submit"value="Eintrag veröffentlichen">
-		</form>
+			</form>
 
-
-	</td>
-	<td id="col2Entries">
-	</td></tr>
-	</table>
+			</div>
+			
+			<div>
+			<p id="col2Entries"></p>
+			</div>
+		</div>
 	</div>
 </div>
 	

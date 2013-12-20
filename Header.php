@@ -10,21 +10,32 @@
 <link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
 </head>
 <body>
+
+<!--Der Gesamte Header: -->
+
 <div id="header-wrapper">
-	<div id="header" class="container">
+
+<!-- Überschrift der Seite -->
 		<div id="logo">
-			<h1><a href="Index.php">Automusuem Mannheim</a></h1>
-			<div id="menu">
-				<ul>
-					<li><a href="index.php" accesskey="1" title="">Home</a></li>
-					<li><a href="#" accesskey="2" title="">Ausgew&auml;hlte Exponate</a></li>
-					<li><a href="#" accesskey="3" title="">&Ouml;ffnungszeiten und Preise</a></li>
-					<li><a href="webshop.php" accesskey="4" title="">Shop</a></li>
-					<li><a href="Kontakt.php" accesskey="5" title="">Kontakt</a></li>
-					<li><a href="#"	accesskey="6" title="">Spiele</a></li>
-					<li><a href="guestbook.php"	accesskey="7" title="">G&auml;stebuch</a></li>
-				</ul>
-			</div>
+			<h1><a href="Index.php">Automuseum Mannheim</a></h1>
 		</div>
-	</div>
+		
+<!-- Menüleiste -->
+		<nav id="menu">
+			<ul id="navigation">			
+				<li><a href="index.php" title="Home">Home</a></li>			
+				<li><a href="#" title="Ausgewählte Exponate">Ausgewählte Exponate</a>
+					<ul id="exponateListe">
+						<li><a href="index.php" title="">Panamera</a></li>
+						<li><a href="index.php" title="">911er</a></li>
+						<li><a href="index.php" title="">Bugatti</a></li>
+					</ul>
+				</li>
+				<li><a href="#" title="Öffnungszeiten">Öffnungszeiten und Preise</a></li>
+				<li><a href="webshop.php" title="Shop">Shop</a></li>
+				<li><a href="Kontakt.php" title=Kontakt"">Kontakt</a></li>
+				<li><a href="#" title="Spiele">Spiele</a></li>
+				<li><a href="guestbook.php"	title="Gästebuch">Gästebuch</a></li>
+			</ul>
+		</nav>>
 </div>

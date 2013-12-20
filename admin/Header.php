@@ -15,20 +15,24 @@ include "http://localhost/admin/auth.php";
 <link href="http://localhost/fonts.css" rel="stylesheet" type="text/css" media="all" />
 </head>
 <body>
+
 <div id="header-wrapper">
-	<div id="header" class="container">
+
+<!-- Überschrift der Seite -->
 		<div id="logo">
 			<h1><a href="Index.php">Automuseum Mannheim</a></h1>
-			<div id="menu">
-				<ul>
+		</div>
+		
+<!-- Menüleiste -->
+		<nav id="menu">
+			<ul id="navigation">			
 					<li><a href="http://localhost/index.php" accesskey="1" title="">Home</a></li>
 					<li><a href="guestbook.php" accesskey="2" title="">Gästebuchverwaltung</a></li>
 					<li><a href="#" accesskey="3" title="">Shopverwaltung</a></li>
 					<li><a href="userverwaltung.php" accesskey="3" title="">Userverwaltung</a></li>
 					<li><a href="logout.php" accesskey="3" title="">Logout</a></li>
 
-				</ul>
-			</div>
-		</div>
-	</div>
+			</ul>
+		</nav>>
 </div>
+
