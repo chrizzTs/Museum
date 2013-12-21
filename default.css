@@ -59,6 +59,7 @@
                 padding-left: 7em; /* Innenabstand dass nicht bis zum Seitenrand geschrieben wird */
                 padding-right: 7em;
                 
+                
                
         }
               
@@ -369,7 +370,7 @@
                 background: url(images/bg01.jpg) repeat-x center top;
                 border-bottom: 15px solid rgba(0,0,0,.5);
                 height: 140px;
-                z-index: 100;
+                z-index: 1000; /* sehr hoch, damit die Slide-Show und Zoom in Plugins auch in den Hintergrund treten */
                 
         }
 
@@ -462,6 +463,7 @@
         #exponateListe a
         {
 			padding: 0.5em 2em; /* Höhe und Breite des Untermenüs */
+			text-align: left;
         }
        
 
@@ -501,12 +503,13 @@
         #wrapper
         {
                 
-                
+                overflow: hidden;
                 background: #FFF;
                 max-width: 4000px;
                 margin: 0 auto;
-                text-align: center;
-                
+                text-align: left;
+                padding-top:0.5em; 
+                padding-bottom: 0.5em; /*oben und unten kleiner weißer rand */               
                 
                 
                

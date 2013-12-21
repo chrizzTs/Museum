@@ -8,7 +8,7 @@
 			<h2>Gästebuchverwaltung</h2>
 		</div>
 
-<div id="wrapper" class="container2">
+<div id="wrapper" class="container">
 <?php
 echo file_get_contents("http://localhost:8080/GuestBook/CurrentDate"); //Daten aus Servlet holen 
 ?>

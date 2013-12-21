@@ -1,21 +1,34 @@
 <?php
-mysql_query("SET NAMES 'utf8'");
-mysql_query("SET CHARACTER SET 'utf8'");
 
-$absendername = htmlspecialchars($_POST["name"]);
-$absendermail = $_POST["email"];
-$eingabe = htmlspecialchars($_POST["eingabe"]);
+header('Content-type:text/html; charset=utf-8');
 
-if(!empty($absendername) and !empty($absendermail) and !empty($eingabe) and filter_var($absendermail, FILTER_VALIDATE_EMAIL))
-{
-$db = mysqli_connect("localhost", "admin", "admin", "guestbook");
 $name = $_POST['name'];
 $email = $_POST['email'];
 $post = $_POST['eingabe'];
 
-$eintragen = mysqli_query($db, "INSERT INTO entries (name, email, post) VALUES ('$absendername', '$absendermail', '$eingabe')");
+
+if(!empty($name) and !empty($email) and !empty($post) and filter_var($email, FILTER_VALIDATE_EMAIL))
+{
+$con = mysqli_connect("localhost", "admin", "admin", "guestbook");
+
+// Check connection
+if (mysqli_connect_errno())
+  {
+  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  }
+
+$sql = "INSERT INTO entries (name, email, post) VALUES ('$_POST[name]', '$email', '$post')";
+
+if (!mysqli_query($con,$sql))
+  {
+  die('Error: ' . mysqli_error($con));
+  }
+
 echo "Eintrag wurde versandt!";
-}
-else
-echo  "<p style=\"color:red\">Eingabefehler, Versuchen sie es Nocheinmal</p>";
+mysqli_close($con);
+
+
+} else{
+  echo  "<p style=\"color:red\">Eingabefehler, versuchen Sie es erneut.</p>";
+  }
 ?>

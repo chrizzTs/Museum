@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-language" content="DE" />
 <title></title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
@@ -26,9 +27,9 @@
 				<li><a href="index.php" title="Home">Home</a></li>			
 				<li><a href="#" title="Ausgewählte Exponate">Ausgewählte Exponate</a>
 					<ul id="exponateListe">
-						<li><a href="index.php" title="">Panamera</a></li>
-						<li><a href="index.php" title="">911er</a></li>
-						<li><a href="index.php" title="">Bugatti</a></li>
+						<li><a href="AudiR8.php" title="">Audi R8</a></li>
+						<li><a href="911.php" title="">Porsche 911</a></li>
+						<li><a href="Veyron.php" title="">Bugatti Veyron</a></li>
 					</ul>
 				</li>
 				<li><a href="#" title="Öffnungszeiten">Öffnungszeiten und Preise</a></li>

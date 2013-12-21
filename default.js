@@ -263,12 +263,10 @@ $( "#guestbookForm" ).submit(function( event ) {
 });
 
 
+
 function windowSize(){
  $("#header-wrapper").css({"width": $(window).width()});
 
-
-
- 
 }
 
     $(function() {
