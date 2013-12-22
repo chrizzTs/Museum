@@ -76,8 +76,7 @@ $("#AjaxWebShopAbfrage").click(function(event) {
 	var posting = $.post( "webshopSkript.php");
 	posting.done(function (data ) {
 	var $new = data;
-	$('#wrapper').append($new);
-	$new.show('slow');
+	$('#vonAnfangAn').append($new);
 	});
 	
 });
@@ -91,6 +90,7 @@ $('#ImShopRegistrieren').click(function(event){
 	$("#wirdZumRegistrierenGeladen").css('display','block');
 	$("#wirdZumLoginGeladen").css('display','none');
 	$('#vonAnfangAn').css('display','none');
+	$('.webshopItem').css('display','none');
 	$("#forButtonMehrAnzeigen").html('');
 });
 
@@ -101,6 +101,7 @@ $('#ImShopEinloggen').click(function(event){
 	$("#wirdZumLoginGeladen").css('display','block');
 	$("#wirdZumRegistrierenGeladen").css('display','none');
 	$('#vonAnfangAn').css('display','none');
+	$('.webshopItem').css('display','none');
 	$("#forButtonMehrAnzeigen").html('');
 });
 
@@ -109,7 +110,75 @@ $('#ImShopEinloggen').click(function(event){
 $("#registrierungAbschicken").click(function(event){
  	event.preventDefault();
  	setzeFarbenZurueck();
+ 	
+ 	var eingabenVollstaendig = testeVollstaendigkeit();
  	var vorname = $("input[name='vorname']").val(); 
+	var	nachname = $("input[name='nachname']").val();	
+	var	username = $("input[name='username']").val();
+	var	passwort = $("input[name='passwort']").val();
+	var	passwort2 = $("input[name='passwortKontrolle']").val();
+	var	wohnort = $("input[name='wohnort']").val();
+	var	plz = $("input[name='plz']").val();
+	var	strasse = $("input[name='strasse']").val();
+	var	hausnummer = $("input[name='hausNr']").val();
+	var	mail = $("input[name='mail']").val();
+	var	mail2 = $("input[name='mailKontrolle']").val();
+	var	tele = $("input[name='tele']").val();
+	var eingabenVollstaendig = true;
+	
+	if(!eingabenVollstaendig)
+	{
+		$('#page-wrapper').css('color','red'); 
+		$('#page-wrapper').html('Die Eingaben sind nicht vollständig!');
+	}
+	if(passwort != passwort2)
+	{
+		$('#page-wrapper').css('color','red'); 
+		$('.inputPasswort').css('color','red');
+		$('#page-wrapper').html('Passwörter stimmen nicht überein!');		
+	}
+	if(mail != mail2)
+	{
+	 	$('#page-wrapper').css('color','red');
+	 	$('.inputMail').css('color','red');
+		$('#page-wrapper').html('Mail-Adressen stimmen nicht überein!');
+	}
+	if(mail == mail2 && passwort == passwort2)
+	{
+		var posting = $.post("newUser.php?action=insert", {vorname: vorname, nachname: nachname, username: username, passwort: passwort, wohnort : wohnort, plz : plz, strasse : strasse, 					hausNr : hausnummer, mail : mail, tele : tele});
+		posting.done(function (data){
+			alert(data);
+			if(data=="funktioniert")
+			{
+				$('#page-wrapper').css('font-color','black');
+				$('#page-wrapper').css('font-style','bold');
+				$('#page-wrapper').html('Vielen Dank für Ihre Registrierung');
+				$("#wrapper").html("Anmeldung erfolgreich! In Kürze erhalten Sie eine Mail!");
+			} else  if (data=="Fehler"){
+				$('#page-wrapper').css('color','red'); 
+				$('#page-wrapper').html('Ihr Username ist bereits vergeben!');
+			} else {
+			}
+		})
+	}
+});
+
+function setzeFarbenZurueck()
+{
+	$('#inputVorname').css('color','black');
+	$('#inputNachname').css('color','black');
+	$('#inputUsername').css('color','black');
+	$('#inputStrasse').css('color','black');
+	$('#inputWohnort').css('color','black');
+	$('.inputTele').css('color','black');
+	$('.inputPasswort').css('color','black');
+	$('#inputTele').css('color','black');
+	$('#inputPLZ').css('color','black');
+};
+
+function testeVollstaendigkeit()
+{
+	var vorname = $("input[name='vorname']").val(); 
 	var	nachname = $("input[name='nachname']").val();	
 	var	username = $("input[name='username']").val();
 	var	passwort = $("input[name='passwort']").val();
@@ -173,56 +242,8 @@ $("#registrierungAbschicken").click(function(event){
 		$('#inputTele').css('color','red');
 		eingabenVollstaendig=false;
 	}
-	
-	if(!eingabenVollstaendig)
-	{
-		$('#page-wrapper').css('color','red'); 
-		$('#page-wrapper').html('Die Eingaben sind nicht vollständig!');
-	} else {
-		if(passwort != passwort2)
-		{
-			$('#page-wrapper').css('color','red'); 
-			$('.inputPasswort').css('color','red');
-			$('#page-wrapper').html('Passwörter stimmen nicht überein!');
-		}
-		if(mail != mail2)
-		{
-	 		$('#page-wrapper').css('color','red');
-	 		$('.inputMail').css('color','red');
-			$('#page-wrapper').html('Mail-Adressen stimmen nicht überein!');
-		}
-		if(mail == mail2 && passwort == passwort2)
-		{
-			var posting = $.post("newUser.php?action=insert", {vorname: vorname, nachname: nachname, username: username, passwort: passwort, wohnort : wohnort, plz : plz, strasse : strasse, 					hausNr : hausnummer, mail : mail, tele : tele});
-			posting.done(function (data){
-				alert(data);
-				if(data=="funktioniert")
-				{
-					$('#page-wrapper').css('font-color','black');
-					$('#page-wrapper').css('font-style','bold');
-					$('#page-wrapper').html('Vielen Dank für Ihre Registrierung');
-					$("#wrapper").html("Anmeldung erfolgreich! In Kürze erhalten Sie eine Mail!");
-				} else  if (data=="Fehler"){
-					$('#page-wrapper').css('color','red'); 
-					$('#page-wrapper').html('Ihr Username ist bereits vergeben!');
-				} else {
-				}
-			})
-		}
-	}
-});
+	return eingabenVollstaendig;
 
-function setzeFarbenZurueck()
-{
-	$('#inputVorname').css('color','black');
-	$('#inputNachname').css('color','black');
-	$('#inputUsername').css('color','black');
-	$('#inputStrasse').css('color','black');
-	$('#inputWohnort').css('color','black');
-	$('.inputTele').css('color','black');
-	$('.inputPasswort').css('color','black');
-	$('#inputTele').css('color','black');
-	$('#inputPLZ').css('color','black');
 };
 
 //Überprüft die Login Daten, die der User eingegeben hat

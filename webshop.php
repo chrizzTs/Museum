@@ -23,8 +23,8 @@
 			$dsatz = mysql_fetch_assoc($res);
 			$tmp = $dsatz["name"];
 			
-			echo '<form action="/warenkorb.php?action=insert" method="post">'
-				.'<div style=" width : 60%; height : 100px; margin-top: 50px; margin-left: 20%; margin-right: 20%; color :black; background-color:#ff8a0e; text-align: center" name="test">'
+			echo '<div class="webshopItem">'
+					.'<form action="/warenkorb.php?action=insert" method="post">'
 					.$dsatz["name"]
 					.'<input style="float: right;" type="submit" value="In den Warenkorb legen"/>';
 					if($tmp == 'Ticket')
@@ -42,17 +42,17 @@
 					.'</br>'
 					.'<span width=100% placeholder:"Menge" style ="text-align: right;">Menge:</span>'
 					.'<input style="float: right;" type="text" size="23" name="menge" maxlength="2"> </input>'
-				."</div>"
-				.'</form>';
+				.'</form>'
+				."</div>";
 		}
 	?>
 	</div>
-	<div id="wirdZumRegistrierenGeladen" style="display: none;">
+	<div id="wirdZumRegistrierenGeladen">
 		<?php
 			include("Registrieren.html");
 		?>
 	</div>
-	<div id="wirdZumLoginGeladen" style="display: none;">
+	<div id="wirdZumLoginGeladen">
 		<?php
 			include("Login.html");
 		?>

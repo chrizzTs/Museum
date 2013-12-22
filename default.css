@@ -755,15 +755,6 @@
 height: 100px;
 }
 
-
-div.webshopItem
-	{
-		width : 800px;
-		height : 200px;
-		color :#ffa300;
-	}
-
-
 /*********************************************************************************/
 /* Three Columns */
 /*********************************************************************************/
@@ -964,8 +955,27 @@ div.webshopItem
 	
 	#wirdZumRegistrierenGeladen{
 		display: none;
+		text-align: center;
 	}
 	
 	#wirdZumLoginGeladen{
 		display: none;
+		text-align: center;
+	}
+	
+	.webshopItem{
+		width : 60%; 
+		height : 100px; 
+		margin-top: 50px; 
+		margin-left: 20%; 
+		margin-right: 20%; 
+		color :black; 
+		background-color:#ff8a0e; 
+		text-align: center;
+		display: block;
+	}
+	
+	.zentrierteTabelle{
+		margin-left: auto;
+		margin-right: auto;
 	}
