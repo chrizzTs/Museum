@@ -66,17 +66,20 @@ $( "#kontaktform" ).submit(function( event ) {
 //Asynchrone Webshop Abfrage
 
 $("#AjaxWebShopAbfrage").click(function(event) {
-	event.preventDefault();		//TEST!!
-	var parent = document.getElementById("wrapper");
-	var kids = parent.childNodes.length;
-	if(parent.childNodes.length == 4)
-	{
-		$("#AjaxWebShopAbfrage").hide();
-	}
+	event.preventDefault();
+	var parent = document.getElementById("vonAnfangAn");
+	var posting = $.post("anzahlDerVerfügbarenArtikel.php")
+	posting.done(function (data) {
+		data++;
+		if(parent.childNodes.length >= data)
+		{
+			$("#AjaxWebShopAbfrage").hide();
+		}
+	});
 	var posting = $.post( "webshopSkript.php");
 	posting.done(function (data ) {
-	var $new = data;
-	$('#vonAnfangAn').append($new);
+		var toBeAdded = data;
+		$('#vonAnfangAn').append(toBeAdded);
 	});
 	
 });
@@ -85,22 +88,22 @@ $("#AjaxWebShopAbfrage").click(function(event) {
 
 
 //ändert die Seite, nachdem registrieren im WebShop geklickt wurde
-$('#ImShopRegistrieren').click(function(event){
+$('.ImShopRegistrieren').click(function(event){
 	event.preventDefault();
-	$("#wirdZumRegistrierenGeladen").css('display','block');
-	$("#wirdZumLoginGeladen").css('display','none');
-	$('#vonAnfangAn').css('display','none');
+	$(".wirdZumRegistrierenGeladen").css('display','block');
+	$(".wirdZumLoginGeladen").css('display','none');
+	$('.vonAnfangAn').css('display','none');
 	$('.webshopItem').css('display','none');
 	$("#forButtonMehrAnzeigen").html('');
 });
 
 
 //ändert die Seite, nachdem Login im WebShop geklickt wurde
-$('#ImShopEinloggen').click(function(event){
+$('.ImShopEinloggen').click(function(event){
 	event.preventDefault();
-	$("#wirdZumLoginGeladen").css('display','block');
-	$("#wirdZumRegistrierenGeladen").css('display','none');
-	$('#vonAnfangAn').css('display','none');
+	$(".wirdZumLoginGeladen").css('display','block');
+	$(".wirdZumRegistrierenGeladen").css('display','none');
+	$('.vonAnfangAn').css('display','none');
 	$('.webshopItem').css('display','none');
 	$("#forButtonMehrAnzeigen").html('');
 });
@@ -110,7 +113,7 @@ $('#ImShopEinloggen').click(function(event){
 $("#registrierungAbschicken").click(function(event){
  	event.preventDefault();
  	setzeFarbenZurueck();
- 	
+
  	var eingabenVollstaendig = testeVollstaendigkeit();
  	var vorname = $("input[name='vorname']").val(); 
 	var	nachname = $("input[name='nachname']").val();	
@@ -124,7 +127,6 @@ $("#registrierungAbschicken").click(function(event){
 	var	mail = $("input[name='mail']").val();
 	var	mail2 = $("input[name='mailKontrolle']").val();
 	var	tele = $("input[name='tele']").val();
-	var eingabenVollstaendig = true;
 	
 	if(!eingabenVollstaendig)
 	{
@@ -143,7 +145,7 @@ $("#registrierungAbschicken").click(function(event){
 	 	$('.inputMail').css('color','red');
 		$('#page-wrapper').html('Mail-Adressen stimmen nicht überein!');
 	}
-	if(mail == mail2 && passwort == passwort2)
+	if(mail == mail2 && passwort == passwort2 && eingabenVollstaendig)
 	{
 		var posting = $.post("newUser.php?action=insert", {vorname: vorname, nachname: nachname, username: username, passwort: passwort, wohnort : wohnort, plz : plz, strasse : strasse, 					hausNr : hausnummer, mail : mail, tele : tele});
 		posting.done(function (data){
@@ -170,10 +172,12 @@ function setzeFarbenZurueck()
 	$('#inputUsername').css('color','black');
 	$('#inputStrasse').css('color','black');
 	$('#inputWohnort').css('color','black');
-	$('.inputTele').css('color','black');
+	$('#inputHausnummer').css('color','black');
+	$('#inputTele').css('color','black');
 	$('.inputPasswort').css('color','black');
 	$('#inputTele').css('color','black');
 	$('#inputPLZ').css('color','black');
+	$('.inputMail').css('color','black');
 };
 
 function testeVollstaendigkeit()
@@ -219,6 +223,13 @@ function testeVollstaendigkeit()
 	}
 	if(plz=='')
 	{
+		for(var i=0; i < plz.length; i++)
+		{
+			if(hausnummer.charAt(i) > 0 && hausnummer.charAt(i) < 9)
+			{
+				eingabenVollstaendig = false;
+			}
+		}
 		$('#inputPLZ').css('color','red');
 		eingabenVollstaendig=false;
 	}
@@ -229,16 +240,34 @@ function testeVollstaendigkeit()
 	}
 	if(hausnummer=='')
 	{
+		for(var i=0; i < hausnummer.length; i++)
+		{
+			if(hausnummer.charAt(i) > 0 && hausnummer.charAt(i) < 9)
+			{
+				eingabenVollstaendig = false;
+			}
+		}
 		$('#inputHausnummer').css('color','red');
 		eingabenVollstaendig=false;
 	}
 	if(mail=='')
 	{
+		if(mail.indexOf("@")== -1)
+		{
+			eingabenVollstaendig = false;
+		}
 		$('.inputMail').css('color','red');
 		eingabenVollstaendig=false;
 	}
 	if(tele=='')
 	{
+		for(var i=0; i < hausnummer.length; i++)
+		{
+			if(hausnummer.charAt(i) > 0 && hausnummer.charAt(i) < 9)
+			{
+				eingabenVollstaendig = false;
+			}
+		}
 		$('#inputTele').css('color','red');
 		eingabenVollstaendig=false;
 	}
@@ -258,11 +287,59 @@ $("#loginAnfrage").click(function(event){
 	
 	posting.done(function (data){
 		alert(data);
+		if(data=="Willkommen")
+		{
+			window.location = "warenkorb.php";
+		}
 	})
+});
+
+$("#logoutButton").click(function (event) {
+	event.preventDefault();
+	document.cookie ="loggedIn=no";
+	window.location = "webshop.php";
 });
 
 
 //Ende der Registrierung und des Logins
+
+//Beginn Verwalten der Webshop-Artikel
+
+$("#neuenArtikelHinzufügen").click(function (event){
+	event.preventDefault();
+	var name = $("input[name=artikelNeu]").val();
+	var preis =$("input[name=preisNeu]").val();
+	var posting = $.post("artikelHinzufuegenSkript.php",{name:name, preis:preis});
+	posting.done(function (data){
+		if(data == "ja")
+		{
+			alert(data);		//TODO
+		} else {	
+			alert(data);		//TODO
+		}
+	});
+});
+
+$("#artikelLöschen").submit(function (Event){
+	event.preventDefault();
+	var artikelZumLöschen = new Array();
+	var ctr=0;
+	$('.toDelete:checked').each(function(){
+		artikelZumLöschen[ctr] = ($(this)).attr('name');
+		ctr++;
+	});
+	for(var i = 0; i < artikelZumLöschen.length; i++)
+	{
+		var name = artikelZumLöschen[i];
+		alert(name);
+		var posting = $.post("artikelLoeschenSkript.php", {name:name});
+		posting.done(function (data){
+			alert(data);	//Seite neu laden
+		});
+	}
+});
+
+//Ende Verwalten der Webshop-Aritkel
 
 //Gästebuch Eintrag Post und Echo Injection
 $( "#guestbookForm" ).submit(function( event ) {

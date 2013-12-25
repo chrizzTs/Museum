@@ -953,12 +953,12 @@ height: 100px;
 		vertical-align: middle;
 	}
 	
-	#wirdZumRegistrierenGeladen{
+	.wirdZumRegistrierenGeladen{
 		display: none;
 		text-align: center;
 	}
 	
-	#wirdZumLoginGeladen{
+	.wirdZumLoginGeladen{
 		display: none;
 		text-align: center;
 	}

@@ -1,3 +1,8 @@
+<!--	In dieser Datei befindet sich der Header des Webauftritts, der von jeder einzelnen Seite eingebunden werden sollte. Hier werden meta-Daten geladen, die default.css eingebunden. Außerdem wird die Überschrift erstellt und die Menüleiste generiert.
+
+-->
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,5 +43,5 @@
 				<li><a href="#" title="Spiele">Spiele</a></li>
 				<li><a href="guestbook.php"	title="Gästebuch">Gästebuch</a></li>
 			</ul>
-		</nav>>
+		</nav>
 </div>

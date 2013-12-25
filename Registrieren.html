@@ -1,4 +1,11 @@
-<form id="registrierenAbschliessen">
+<!DOCTYPE HTML>
+<!-- Die Datei wird mittels php in die Webshop.php eingebunden, sobald die Seite geladen wird. Anschließend kann der User dynamisch den Content der Seite verändern. Alle Aktionen werden mit jQuery und Ajax entgegengonemmen und durchfegührt.-->
+
+
+<!-- Das Formular nimmt alle Daten auf, die ein User zur Anmeldung angeben muss. Zur Verarbeitung und Konsistenzprüfung finden Sie mehr in der default.js und newUser.php -->
+
+
+<form class="registrierenAbschliessen">
 	<table class="zentrierteTabelle">
 		<tr>
 			<td><span id="inputVorname">Vorname:</span> </td> 
@@ -26,7 +33,7 @@
 		</tr>
 		<tr>
 			<td><span id="inputPLZ">Postleitzahl:</span> </td>
-			<td><input type="number" name="plz"size="30"></br></td>
+			<td><input type="text" name="plz"size="30"></br></td>
 		</tr>
 		<tr>
 			<td><span id="inputStrasse">Straße:</span> </td>
@@ -34,7 +41,7 @@
 		</tr><
 		<tr>
 			<td><span id="inputHausnummer">Hausnummer:</span> </td>
-			<td><input type="number" name="hausNr"size="30"></br></td>
+			<td><input type="text" name="hausNr"size="30"></br></td>
 		</tr>
 		<tr>
 			<td><span class="inputMail">E-Mail Adresse:</span> </td>
@@ -46,7 +53,7 @@
 		</tr>
 		<tr>
 			<td><span id="inputTele">Telefonnummer:</span> </td>
-			<td><input type="number" name="tele"size="30"></br></td>
+			<td><input type="text" name="tele"size="30"></br></td>
 		</tr>
 		<tr>
 			<td colspan="2"><input type="submit" value="Registrieren" id="registrierungAbschicken"></td>
