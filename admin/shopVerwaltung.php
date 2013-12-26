@@ -2,7 +2,7 @@
 	//Diese Datei zeigt dem Admin an, welche Shop-Verwaltungsmöglichkeiten sich ihm bieten. Er kann neue Artikel mit Namen und Preis einfügen, oder eine Auswahl von Artikeln löschen. In der ersten Spalte, die das Anlegen neuer Artikel ermöglicht, sind zwei Eingabefelder für die Daten und eine Schaltfläche "neuen Artikel hinzufügen" zum Absenden der Daten zu sehen. Diese Daten werden dann vom artikelHinzufuegenSkript.php ausgewertet. In der Zweiten Spalte werden tabellarisch alle Artikel aus der Tabelle aufgelistet und es besteht die Möglichkeit mittels einer Checkbox die zum Löschen auszuwählen und diese Auswahl mit einer Schaltfläche "Ausgewählte Artikel löschen" aus der Tabelle zu entfernen. Diese Auswahl wird von dem artikelLueschenSkript.php ausgewertet.
 	
 	include("Header.php");	//Einbinden Header
-	include("http://localhost/config.php");	//Aufbau der DB-verbindung und überprüfen des User-Cookies
+	include("../config.php");	//Aufbau der DB-verbindung und überprüfen des User-Cookies
 ?>
 <div id="page-wrapper">
 	<div id="page" class="container2">
