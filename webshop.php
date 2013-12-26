@@ -95,8 +95,9 @@
 <!--	Hier befindet sich der Button, der es dem User ermöglicht sich mehr Artikel anzeigen zu lassen, falls alle angezeigt werden, ausgeblendet	-->
 <!--	ruft über die default.js das webshopSkript.php auf	-->
 <div id="forButtonMehrAnzeigen">
-		<input type="button" value="Mehr anzeigen" id="AjaxWebShopAbfrage">		<!-- Ruft id aus der default.js auf, die ruft 	-->	</div>
-		<a href="admin/shopVerwaltung.php">abcd</a>														<!--webshopskript auf -->				
+		<input type="button" value="Mehr anzeigen" id="AjaxWebShopAbfrage">		<!-- Ruft id aus der default.js auf, die ruft 	-->	
+		</div>
+																				<!--webshopskript auf -->				
 
 <?php
 	include "Footer.php";	//Einbinden des Footers
