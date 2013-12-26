@@ -1,5 +1,6 @@
 <?php
-// Dieses Skript führt den Kaufabschluss des Users durch und wird durch die Schaltfläche "Kaufen" aus dem Warenkorb aufgerufen. Dazu wird als erstes der loggedIn Cookie des Users abgefragt um zu überprüfen, welcher der Benutzer auf dem Client eingeloggt ist und seinen Kauf abschließen möchte. Falls der Wert="no" ist, also kein User auf diesem Client eingeloggt ist, ist die Schaltfläche, die dieses Skript aufgeruft ausgegraut und das Skript kann nicht nur manuelle und ohne Auswirkungen gestartet werden. Danach wird der Warenkorb des angemeldeten Benutzers aus der Warenkorb-Tabelle abgerufen und der Gesamtbetrag berechnet. Anschließend werden die Werte aus der Warenkorb-Tabelle gelöscht und in die verkauft-Tabelle geschrieben.
+// Dieses Skript führt den Kaufabschluss des Users durch und wird durch die Schaltfläche "Kaufen" aus dem Warenkorb aufgerufen. Dazu wird als erstes der loggedIn Cookie des Users abgefragt um zu überprüfen, welcher der Benutzer auf dem Client eingeloggt ist und seinen Kauf abschließen möchte. Falls der Wert="no" ist, also kein User auf diesem Client eingeloggt ist, ist die Schaltfläche, die dieses Skript aufgeruft ausgegraut und das Skript kann nicht nur manuelle und ohne Auswirkungen gestartet werden. Danach wird der Warenkorb des angemeldeten Benutzers aus der Warenkorb-Tabelle abgerufen und der Gesamtbetrag berechnet. Anschließend werden die Werte aus der Warenkorb-Tabelle gelöscht und in die verkauft-Tabelle geschrieben. Damit das Museum Bescheid weiß, welche Artikel von welchem Kunden gekauft wurden, wird dies in einer Auftragsmail an das Museum versendet.
+
 include("config.php");	//Aufbau der DB-Verbindung und Überprüfen des User-Cookies. Abschließend wird eine Mail generiert und dem Käufer zugesendet.
 include "Header.php";	//Einbinden des Header
 
@@ -25,12 +26,17 @@ include "Header.php";	//Einbinden des Header
 		//Abfrage des Warenkorbs
 		$result = mysql_query("SELECT * FROM warenkorb WHERE sid = '$sid'");
 		
-		//Berechnen des Warenkorbwertes
+		//Berechnen des Warenkorbwertes und erstellen der Admin-Message
 		$betrag = 0;
+		$adminMessage="Der Kunde $sid hat folgende Artikel verbindlich im Webshop bestellt: </br>";
+		
 		while($row = mysql_fetch_assoc($result))
 		{
 			$betrag += $row["menge"]*$row["preis"];
+			$adminMessage .=$row["menge"]."mal: ".$row["products"].",</br></br>";
 		}
+		
+		$adminMessage .= "</br> Bitte überprüfen Sie die Bezahlung und veranlassen Sie ggf. den Versand der Artikel!";
 		
 		//Einfügen in die verkauft Tabelle und löschen aus der Warenkorb Tabelle
 		if(!mysql_query("INSERT INTO verkauft VALUES ('', '$sid', '$betrag', 'FALSE')")) echo mysql_error();
@@ -59,6 +65,7 @@ include "Header.php";	//Einbinden des Header
 		
 		
 		mail($mail, "Ihr Einkaufe im Automuseum Mannheim", $message);
+		mail("matswn77@gmail.com", "Einkauf im Webshop", $adminMessage);
 	}
 	?>
 <?php
