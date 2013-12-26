@@ -1,5 +1,5 @@
 <?php 
-include "http://localhost/admin/auth.php";
+include "auth.php";
 ?>
 
 
@@ -27,8 +27,8 @@ include "http://localhost/admin/auth.php";
 		<nav id="menu">
 			<ul id="navigation">			
 					<li><a href="http://localhost/index.php" accesskey="1" title="">Home</a></li>
-					<li><a href="guestbook.php" accesskey="2" title="">Gästebuchverwaltung</a></li>
-					<li><a href="#" accesskey="3" title="">Shopverwaltung</a></li>
+					<li><a href="guestbook.php" title="">Gästebuchverwaltung</a></li>
+					<li><a href="shopVerwaltung.php" title="">Shopverwaltung</a></li>
 					<li><a href="userverwaltung.php" accesskey="3" title="">Userverwaltung</a></li>
 					<li><a href="logout.php" accesskey="3" title="">Logout</a></li>
 

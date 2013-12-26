@@ -96,7 +96,7 @@
 <!--	ruft über die default.js das webshopSkript.php auf	-->
 <div id="forButtonMehrAnzeigen">
 		<input type="button" value="Mehr anzeigen" id="AjaxWebShopAbfrage">		<!-- Ruft id aus der default.js auf, die ruft 	-->	</div>
-		<a href="shopVerwaltung.php">abcd</a>														<!--webshopskript auf -->				
+		<a href="admin/shopVerwaltung.php">abcd</a>														<!--webshopskript auf -->				
 
 <?php
 	include "Footer.php";	//Einbinden des Footers
