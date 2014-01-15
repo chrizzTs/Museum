@@ -82,8 +82,13 @@
 /*********************************************************************************/
 
 	@media only screen and (max-device-width: 480px) {
-	#menu li:nth-child(2n){
-		display: none;
+	#home,
+	#shop,
+	#spiel,
+	#guestbook{
+		 display:none;
+	
+			
 	}
 
 	}

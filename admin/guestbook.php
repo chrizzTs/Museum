@@ -10,7 +10,7 @@
 
 <div id="wrapper" class="container">
 <?php
-echo file_get_contents("http://localhost:8080/GuestBook/CurrentDate"); //Daten aus Servlet holen 
+echo file_get_contents("http://localhost:8080/GuestBook/GuestBookEntries"); //Daten aus Servlet holen 
 ?>
 </div>
 <?php

@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-type" content="text/html; charset=UTF8">  
 <meta http-equiv="Content-language" content="DE" />
 <title></title>
 <meta name="keywords" content="" />
@@ -16,6 +16,7 @@
 <link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
 </head>
 <body>
+
 
 <!--Der Gesamte Header: -->
 
@@ -29,19 +30,19 @@
 <!-- Menüleiste -->
 		<nav id="menu">
 			<ul id="navigation">			
-				<li><a href="index.php" title="Home">Home</a></li>			
-				<li><a href="#" title="Ausgewählte Exponate">Ausgewählte Exponate</a>
+				<li id= "home"><a href="index.php" title="Home">Home</a></li>			
+				<li id= "exponate"><a href="#" title="Ausgewählte Exponate">Ausgewählte Exponate</a>
 					<ul id="exponateListe">
 						<li><a href="AudiR8.php" title="">Audi R8</a></li>
 						<li><a href="911.php" title="">Porsche 911</a></li>
 						<li><a href="Veyron.php" title="">Bugatti Veyron</a></li>
 					</ul>
 				</li>
-				<li><a href="#" title="Öffnungszeiten">Öffnungszeiten und Preise</a></li>
-				<li><a href="webshop.php" title="Shop">Shop</a></li>
-				<li><a href="Kontakt.php" title=Kontakt"">Kontakt</a></li>
-				<li><a href="#" title="Spiele">Spiele</a></li>
-				<li><a href="guestbook.php"	title="Gästebuch">Gästebuch</a></li>
+				<li id= "open"><a href="#" title="Öffnungszeiten">Öffnungszeiten und Preise</a></li>
+				<li id= "shop"><a href="webshop.php" title="Shop">Shop</a></li>
+				<li id= "kontakt"><a href="Kontakt.php" title=Kontakt"">Kontakt</a></li>
+				<li id= "spiel"><a href="#" title="Spiele">Spiele</a></li>
+				<li id= "guestbook"><a href="guestbook.php"	title="Gästebuch">Gästebuch</a></li>
 			</ul>
 		</nav>
 </div>

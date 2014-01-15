@@ -1,4 +1,5 @@
 <?php
+header('Content-type:text/html; charset=utf-8');
 
 
 $db = mysqli_connect("localhost", "admin", "admin", "guestbook");
@@ -11,10 +12,10 @@ $count = 1;
 while($row = mysqli_fetch_object($ergebnis))
 {
 	echo "<p><b>", $count, "</b><br>\n";
-	echo utf8_encode($row->date), "<br>\n";
-	echo utf8_encode($row->name), "<br>\n";
-	echo utf8_encode($row->email), "<br>\n";
-	echo utf8_encode($row->post), "<br></p>\n";
+	echo ($row->date), "<br>\n";
+	echo ($row->name), "<br>\n";
+	echo ($row->email), "<br>\n";
+	echo ($row->post), "<br></p>\n";
 
 	
   $count++;

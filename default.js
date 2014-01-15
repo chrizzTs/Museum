@@ -2,13 +2,14 @@
 
 //EventHandeler..............
 
+//Wird immer beim Laden der WEbsite automatisch aufgerufen und ausgeführt
 $(document).ready(function(){
 
 	loadData();
 	windowSize();
 });
 
-
+//Passt das Format der Website entsprechend der Bildschirmgröße an
 $(window).resize(function(){
 windowSize();
 });
@@ -31,7 +32,8 @@ $( "#loginForm" ).submit(function( event ) {
  	
  	var username = $("#username").val();
  	var password = $("#password").val();
-
+ 	
+ 	//Sendet die Login-Daten des Users an das PHP "Login.php" Skript um die Authentifizierung zu prüfen.
    var posting = $.post( "admin/login.php", {username:username, password:password});
    posting.done(function( data ) {
    	if(!(data =="Success")){
@@ -53,8 +55,39 @@ $( "#kontaktform" ).submit(function( event ) {
  	var name = $("#name").val();
  	var email = $("#email").val();
  	var eingabe = $("#eingabe").val();
-
+ 	
+ 	
    var posting = $.post( "AnfrageSkript.php", {name:name, email:email, eingabe:eingabe});
+   posting.done(function( data ) {
+	  $("#replyPost").html(data);
+	  $("#kontaktform").hide("fast");
+	 
+	  
+	});
+
+	
+});
+
+// Bewerbungsformular Post und Echo Injection
+$( "#formApplication" ).submit(function( event ) {
+ 	event.preventDefault();
+ 	
+ 	var lastname = $("#name").val();
+ 	var firstname = $("#firstname").val();
+ 	var sex = $("#sex").val();
+ 	var title = $("#title").val();
+ 	var addname = $("#addname").val();
+ 	var birthday = $("#birthday").val();
+ 	var birthcountry = $("#birthcountry").val();
+ 	var nationality= $("#name").val();
+ 	var mail= $("#mail").val();
+ 	var family= $("#family").val();
+ 	var input = $("#input").val();
+ 	var dropzone = $("#dropzone").val();
+ 	
+ 	$.post("upload.php", dropzone);
+ 	
+   var posting = $.post( "RecrutingSkript.php", {lastname:lastname, firstname:firstname, sex:sex, title:title, addname:addname, birthday:birthday, birthcountry:birthcountry, nationality:nationality, mail:mail,  family:family, input:input});
    posting.done(function( data ) {
 	  $("#replyPost").html(data);
 	  $("#kontaktform").hide("fast");
@@ -489,14 +522,16 @@ $("#artikelLöschen").submit(function (Event){		//Ein Artikel wird gelöscht
 $( "#guestbookForm" ).submit(function( event ) {
  	event.preventDefault();
  	 
+ 	//Sammelt dien Daten der Input Fields und speichert diese temporär als variablen ab
  	var name = $("input[name='name']").val();
  	var email = $("input[name='email']").val();
  	var eingabe = $("textarea[name='eingabe']").val();
  	 	
-
+ 	//Sendet die Variablen an das PHP Skrip addEntry.php um diese dort zu verarbeiten
    var posting = $.post( "addEntry.php", {name:name, email:email, eingabe:eingabe});
    posting.done(function( data ) {
 	  $("#replyGuestbookEntry").html(data);
+	  //Nachdem ein neuer Eintrag erstellt wurde, sollen alle Einträge über Ajax aktualisiert werden.
 	  loadData();
 	    
 	});
