@@ -32,13 +32,18 @@
 			<ul id="navigation">			
 				<li id= "home"><a href="index.php" title="Home">Home</a></li>			
 				<li id= "exponate"><a href="#" title="Ausgewählte Exponate">Ausgewählte Exponate</a>
-					<ul id="exponateListe">
+					<ul id="submenue">
 						<li><a href="AudiR8.php" title="">Audi R8</a></li>
 						<li><a href="911.php" title="">Porsche 911</a></li>
 						<li><a href="Veyron.php" title="">Bugatti Veyron</a></li>
 					</ul>
 				</li>
-				<li id= "open"><a href="#" title="Öffnungszeiten">Öffnungszeiten und Preise</a></li>
+				<li id= "visiors"><a href="#" title="Besucherinformationen">Besucherinformationen</a>
+					<ul id="submenue">
+						<li id= "open"><a href="#" title="Öffnungszeiten">Öffnungszeiten und Preise</a></li>
+						<li id="recruting"><a href="#" title="Recruting">Jobs</a></li>
+					</ul>	
+				</li>
 				<li id= "shop"><a href="webshop.php" title="Shop">Shop</a></li>
 				<li id= "kontakt"><a href="Kontakt.php" title=Kontakt"">Kontakt</a></li>
 				<li id= "spiel"><a href="#" title="Spiele">Spiele</a></li>

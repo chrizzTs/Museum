@@ -456,7 +456,7 @@
         
      
         
-        #exponateListe
+        #submenue
         {
 			
         position: absolute;  
@@ -465,7 +465,7 @@
         }
         
         /*Formatierung Links in dem Untermenü*/
-        #exponateListe a
+        #submenue a
         {
 			padding: 0.5em 2em; /* Höhe und Breite des Untermenüs */
 			text-align: left;
@@ -473,7 +473,7 @@
        
 
 
-		#exponateListe li
+		#submenue li
 		{
 			float: none; /* Vertikale Ausrichtung des Untermenüs */
 			display: block;  
