@@ -25,7 +25,6 @@ include "Header.php";	//Einbinden des Header
 	{
 		//Abfrage des Warenkorbs
 		$result = mysql_query("SELECT * FROM warenkorb WHERE sid = '$sid'");
-		
 		//Berechnen des Warenkorbwertes und erstellen der Admin-Message
 		$betrag = 0;
 		$adminMessage="Der Kunde $sid hat folgende Artikel verbindlich im Webshop bestellt: </br>";
@@ -34,6 +33,7 @@ include "Header.php";	//Einbinden des Header
 		{
 			$betrag += $row["menge"]*$row["preis"];
 			$adminMessage .=$row["menge"]."mal: ".$row["products"].",</br></br>";
+			$wkid = $row["wkid"];
 		}
 		
 		$adminMessage .= "</br> Bitte überprüfen Sie die Bezahlung und veranlassen Sie ggf. den Versand der Artikel!";

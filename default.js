@@ -160,6 +160,7 @@ $('.ImShopRegistrieren').click(function(event){		//Die Webshop Maske wird aus- u
 //ändert die Seite, nachdem Login im WebShop geklickt wurde
 $('.ImShopEinloggen').click(function(event){	//die Webshop Maske wird aus- und das Formular zum Einloggen wird eingeblendet
 	event.preventDefault();
+	$("#passwordInsertedCorrectly").empty();
 	$(".wirdZumLoginGeladen").css('display','block');
 	$(".wirdZumRegistrierenGeladen").css('display','none');
 	$('.vonAnfangAn').css('display','none');
@@ -171,7 +172,6 @@ $('.ImShopEinloggen').click(function(event){	//die Webshop Maske wird aus- und d
 //ruft das PHP-Skript auf, das den neuen User in der Datenbank anlegt
 $("#registrierungAbschicken").click(function(event){
  	event.preventDefault();
- 	
  	//Falls schon einmal versucht wurde, Daten einzugeben weírd die Farbe der Beschriftung der Eingabefelder auf default=schwarz zurückgesetzt
  	setzeFarbenZurueck();
 
@@ -473,16 +473,16 @@ function testeVollstaendigkeit()	//testet ob alle Eingaben des Registrierens vol
 //Überprüft die Login Daten, die der User eingegeben hat und wird nach Betätigend der Schaltfläche Login im Webshop-Login Interface aufgerufen
 $("#loginAnfrage").click(function(event){
 	event.preventDefault();
-	
 	var username = $("input[name='usernameEingegeben']").val();
 	var passwort = $("input[name='passwortEingegeben']").val();
-	
+		
 	var posting = $.post("shopLoginSkript.php",{username:username, passwort:passwort});		//Eingabe wird im shopLoginSkript.php überprüft und ggf. der Cookie gesetzt
-	
 	posting.done(function (data){
 		if(data=="Willkommen")				//Falls login geklappt hat, wird in den Warenkorb des eingeloggten Benutzers weitergeleitet
 		{
 			window.location = "warenkorb.php";
+		} else {
+			$("#passwordInsertedCorrectly").text("Falscher Username oder Passwort angegeben.");
 		}
 	})
 });

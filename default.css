@@ -996,3 +996,10 @@ height: 100px;
 		margin-left: auto;
 		margin-right: auto;
 	}
+	
+	#passwordInsertedCorrectly{
+		width : 100%;
+		color : red;
+		text-align: center;
+		height : 20px;
+	}
