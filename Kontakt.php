@@ -11,11 +11,12 @@
 			<h2>Kontaktdaten</h2>
 		</div>
 
-		<p id="replyPost">Bei jeglichen Fragen, Anmerkungen oder Anregungen kontaktieren Sie uns bitte gerne. Wir werden umgehend auf Ihr Anliegen eingehen.</p>
+		<p>Bei jeglichen Fragen, Anmerkungen oder Anregungen kontaktieren Sie uns bitte gerne. Wir werden umgehend auf Ihr Anliegen eingehen.</p>
 	</div>
 	
 	<!-- Eingabeformular für Name, Mail, und Anfragetext-->
 	<div id="wrapper" class="container">
+	<p id="replyPost"></p>
 		<form id="kontaktform">
 			Ihr Name:<br/>
 			<input id="name" name="name" type="text" size="30" maxlength="30" value="Optimus Prime"/><br/>

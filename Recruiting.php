@@ -21,15 +21,18 @@ include "Header.php"; // Einbinden Header
 
 
 
-     <p id="replyPost"> Wir freuen uns, dass Sie sich bei uns bewerben wollen. Der nächste Schritt ist das Ausfüllen des offiziellen Bewerbungsformulars,
-das direkt an die Personalabteilung gerichtet ist. Das Beantworten der Fragen dauert nur etwa 20 bis 30 Minuten.	    </p>
+     <p id="replyPost"> </p>
+
+	<div id="recturingForm">
+     Wir freuen uns, dass Sie sich bei uns bewerben wollen. Der nächste Schritt ist das Ausfüllen des offiziellen Bewerbungsformulars,
+	 das direkt an die Personalabteilung gerichtet ist. Das Beantworten der Fragen dauert nur etwa 20 bis 30 Minuten.	   
 	
 	    
-	    Felder mit * sind Pflichtfelder und müssen ausgefüllt werden. </p>
-	  <p><h3>Angaben zu Ihrer Person:</h3>
-	
-      
+	 <p>Felder mit * sind Pflichtfelder und müssen ausgefüllt werden.</p>
+		<h3>Angaben zu Ihrer Person:</h3>
    <table border="0" id="recturingForm"> 
+
+		
   <tr>
     <td id="lastnameLabel">Nachname*</td>
     <td><p><input id="lastname" name="name" type="text" size="30" maxlength="30" /></p></td>
@@ -85,7 +88,7 @@ das direkt an die Personalabteilung gerichtet ist. Das Beantworten der Fragen da
 	</tr>
 			</form>
 	</table>
- </form>
+</div>
  </div>
 	</div>
 </div>
