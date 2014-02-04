@@ -40,13 +40,13 @@
 				</li>
 				<li id= "visiors"><a href="#" title="Besucherinformationen">Besucherinformationen</a>
 					<ul id="submenue">
-						<li id= "open"><a href="#" title="Öffnungszeiten">Öffnungszeiten und Preise</a></li>
-						<li id="recruting"><a href="#" title="Recruting">Jobs</a></li>
+						<li id= "open"><a href="Information.php" title="Öffnungszeiten">Öffnungszeiten und Preise</a></li>
+						<li id="recruting"><a href="Recruiting.php" title="Recruting">Jobs</a></li>
 					</ul>	
 				</li>
 				<li id= "shop"><a href="webshop.php" title="Shop">Shop</a></li>
 				<li id= "kontakt"><a href="Kontakt.php" title=Kontakt"">Kontakt</a></li>
-				<li id= "spiel"><a href="#" title="Spiele">Spiele</a></li>
+				<li id= "spiel"><a href="Quiz.php" title="Spiel">Spiel</a></li>
 				<li id= "guestbook"><a href="guestbook.php"	title="Gästebuch">Gästebuch</a></li>
 			</ul>
 		</nav>

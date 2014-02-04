@@ -36,6 +36,6 @@
 if ((screen.width < 699) //Bei einer Screengröße kleiner 699px, wird von der Index-Seite auf eine andere Seie redirected.
 && document.cookie.indexOf("skipmobile") == -1)
 {
-document.location = "AudiR8.php";
+document.location = "Information.php";
 }
 </script>
