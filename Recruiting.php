@@ -17,69 +17,74 @@ include "Header.php"; // Einbinden Header
 			<h2>Ihre Bewerbung bei uns!</h2>
 		</div>
 <div id="wrapper" class="container">
-	  <p id="replyPost">
-      Wir freuen uns, dass Sie sich bei uns bewerben wollen. Der nächste Schritt ist das Ausfüllen des offiziellen Bewerbungsformulars,
+	
+
+
+
+     <p id="replyPost"> Wir freuen uns, dass Sie sich bei uns bewerben wollen. Der nächste Schritt ist das Ausfüllen des offiziellen Bewerbungsformulars,
 das direkt an die Personalabteilung gerichtet ist. Das Beantworten der Fragen dauert nur etwa 20 bis 30 Minuten.	    </p>
-	  <p>Ihre Daten werden selbstverständlich streng vertraulich behandelt, nicht an Dritte weitergegeben und nur für die Bewerbung
-	    verwendet. Bitte beachten Sie, dass Ihre Daten nur dann an uns gesendet werden, wenn Sie am Ende des Formulars auf
-	    „Bewerbung absenden“ klickst.
+	
 	    
 	    Felder mit * sind Pflichtfelder und müssen ausgefüllt werden. </p>
 	  <p><h3>Angaben zu Ihrer Person:</h3>
+	
       
-      <table border="0">
+   <table border="0" id="recturingForm"> 
   <tr>
-    <td>Nachname*</td>
-    <td><p><input id="name" name="name" type="text" size="30" maxlength="30" /></p></td>
+    <td id="lastnameLabel">Nachname*</td>
+    <td><p><input id="lastname" name="name" type="text" size="30" maxlength="30" /></p></td>
   </tr>
   <tr>
-    <td>Vorname*</td>
-    <td><input id="name" name="name" type="text" size="30" maxlength="30" /></p></td>
+    <td id="firstnameLabel">Vorname*</td>
+    <td><input id="firstname" name="name" type="text" size="30" maxlength="30" /></p></td>
   </tr>
   <tr>
     <td>Geschlecht</td>
-    <td><input id="name" name="name" type="text" size="30" maxlength="30" /></p></td>
+    <td><input id="sex" name="name" type="text" size="30" maxlength="30" /></p></td>
   </tr>
   <tr>
     <td>Titel</td>
-    <td><input id="name" name="name" type="text" size="30" maxlength="30" /></p></td>
+    <td><input id="title" name="name" type="text" size="30" maxlength="30" /></p></td>
   </tr>
   <tr>
     <td>Nameszusatz</td>
-    <td><input id="name" name="name" type="text" size="30" maxlength="30" /></p></td>
+    <td><input id="addname" name="name" type="text" size="30" maxlength="30" /></p></td>
   </tr>
   <tr>
     <td><p>Geburtsdatum (z.B.: 30.07.1983)</p></td>
-    <td><input id="name" name="name" type="text" size="30" maxlength="30" /></p></td>
+    <td><input id="birthday" name="name" type="text" size="30" maxlength="30" /></p></td>
   </tr>
   <tr>
     <td>Geburtsland</td>
-    <td><input id="name" name="name" type="text" size="30" maxlength="30" /></p></td>
+    <td><input id="birthcountry" name="name" type="text" size="30" maxlength="30" /></p></td>
   </tr>
   <tr>
     <td>Geburtsname</td>
-    <td><input id="name" name="name" type="text" size="30" maxlength="30" /></p></td>
+    <td><input id="birthname" name="name" type="text" size="30" maxlength="30" /></p></td>
   </tr><tr>
     <td>Staatsangehörigkeit</td>
-    <td><input id="name" name="name" type="text" size="30" maxlength="30" /></p></td>
+    <td><input id="nationality" name="name" type="text" size="30" maxlength="30" /></p></td>
   </tr><tr>
-    <td>E-Mail Adresse*</td>
-    <td><input id="name" name="name" type="text" size="30" maxlength="30" /></p></td>
+    <td id="emailLabel">E-Mail Adresse*</td>
+    <td><input id="mail" name="name" type="text" size="30" maxlength="30" /></p></td>
   </tr>
   	<td>Familienstand</td>
-    <td><input type="radio" name="fam" value="fam"> Ledig<br>
-    <input type="radio" name="fam" value="fam"> 
+    <td><input type="radio" id="ledig" name="fam" value="fam"> Ledig<br>
+    <input type="radio" id="married" name="fam" value="fam"> 
     Verheiratet</td>
-</table>
-
-	</p>
-				<p>Zusätzliche Nachricht<br /><textarea id="eingabe" name="eingabe" cols="50" rows="10"></textarea></p>
-				<p>Weitere Anhänge:</p>
-                
-      <form action="upload.php" class="dropzone"></form>
-	  <input type="submit" value="Bewerbung absenden"/>
+	<tr>
+	<td>Zusätzliche Nachricht</td>/>
+	<td><textarea id="eingabe" name="eingabe" cols="50" rows="10"></textarea></td>
+	</tr>
+	<tr>
+	<td>Weitere Anhänge:</td>         
+     <td><form action="upload.php" class="dropzone"></form></td>
+	</tr>
+	<tr>
+	<td> <input type="button"  id="formApplication" value="Bewerbung absenden"/> </td>
+	</tr>
 			</form>
-		</p>
+	</table>
  </form>
  </div>
 	</div>

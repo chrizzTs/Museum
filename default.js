@@ -69,31 +69,54 @@ $( "#kontaktform" ).submit(function( event ) {
 });
 
 // Bewerbungsformular Post und Echo Injection
-$( "#formApplication" ).submit(function( event ) {
- 	event.preventDefault();
- 	
- 	var lastname = $("#name").val();
+$( "#formApplication" ).click(function( event ) {
+
+	//Zurücksetzten der Fabrbe,wenn Feld gesetzt ist. 
+		$("#emailLabel").css("color", "black");
+		$("#lastnameLabel").css("color", "black");
+		$("#firstnameLabel").css("color", "black");
+ 
+ 	var lastname = $("#lastname").val();
  	var firstname = $("#firstname").val();
  	var sex = $("#sex").val();
  	var title = $("#title").val();
  	var addname = $("#addname").val();
  	var birthday = $("#birthday").val();
+ 	var birthname = $("#birthname").val();
  	var birthcountry = $("#birthcountry").val();
- 	var nationality= $("#name").val();
+ 	var nationality= $("#nationality").val();
  	var mail= $("#mail").val();
- 	var family= $("#family").val();
- 	var input = $("#input").val();
- 	var dropzone = $("#dropzone").val();
+ 	var ledig = $("#ledig").val();
+ 	var married = $("#married").val();
+ 
  	
- 	$.post("upload.php", dropzone);
+ 	var send=true;
  	
-   var posting = $.post( "RecrutingSkript.php", {lastname:lastname, firstname:firstname, sex:sex, title:title, addname:addname, birthday:birthday, birthcountry:birthcountry, nationality:nationality, mail:mail,  family:family, input:input});
+ 	if(lastname==""){
+ 		send=false;
+	 	$("#lastnameLabel").css("color", "red");
+ 	}
+ 	if(firstname==""){
+ 		send=false;
+	 	$("#firstnameLabel").css("color", "red");
+ 	} 	
+  	if(mail==""){
+ 		send=false;
+	 	$("#emailLabel").css("color", "red");
+ 	}
+ 	
+ 	if(send==true){
+ 	
+ 	var posting = $.post( "RecruitingSkript.php", {firstname:firstname, lastname:lastname, sex:sex, title:title, birthday:birthday, addname:addname,  birthname:birthname, birthcountry:birthcountry, nationality:nationality, mail:mail, ledig:ledig});
    posting.done(function( data ) {
 	  $("#replyPost").html(data);
-	  $("#kontaktform").hide("fast");
-	 
+	 	});
+	 	$("#recturingForm").hide("fast");
+
+ 	}
+ 
 	  
-	});
+
 
 	
 });
