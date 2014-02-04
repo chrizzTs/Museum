@@ -82,13 +82,15 @@
   </tr>
   <tr>
     <td>Gruppen ab 10 Personen</td>
-    <td>9,00 €</td>
+    <td>90,00 €</td>
   </tr>
   <tr>
     <td>Familienkarte</td>
     <td>22,00 €</td>
   </tr>
 </table>
+  </p>
+  <p>Falls Sie eines der Tickets direkt kaufen möchten, gelangen Sie <a href="webshop.php">hier</a> in unseren Webshop
   </p>
   <br>Wir bitten Sie, während der Laufzeit der Sonderausstellungen, Gruppenbesuche ab 10 Personen unter der Telefonnummer &lt;Telefonnummer&gt; anzumelden. Bei unangemeldeten Gruppen können sonst Wartezeiten entstehen.</br>
 </div>		
