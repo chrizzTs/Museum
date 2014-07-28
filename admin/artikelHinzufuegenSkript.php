@@ -3,10 +3,11 @@
 
 	include("config.php");	//Baut eine DB-verbindung auf und überprüft, ob der User-Cookie gesetzt ist.
 
+
 	//Einlesen der Daten
+
 	$name = $_POST["name"];
 	$preis = $_POST["preis"];
-	
 	
 	$result = mysql_query("INSERT INTO products VALUES ('','$name','$preis')");	//Generieren des neuen Tabelleneintrags
 	if($result)
@@ -15,4 +16,5 @@
 	} else {
 		echo mysql_error();
 	}
+
 ?>

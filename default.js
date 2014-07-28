@@ -216,7 +216,7 @@ $("#registrierungAbschicken").click(function(event){
 	}
 	
 	//Falls alle Eingaben den Vollständigkeits- und Konsistenzanforderungen entsprechen, wird ein User mit dem newUser.php Skript in der shopUser Tabelle angelegt
-	if(mail == mail2 && passwort == passwort2 && eingabenVollstaendig)
+	if(mail == mail2 && passwort == passwort2 && passwort)
 	{
 	
 		//Aufruf des Skripts und Übergabe der Daten
@@ -502,16 +502,18 @@ $("#neuenArtikelHinzufügen").click(function (event){	//Ein neuer Artikel wird h
 	event.preventDefault();
 	var name = $("input[name=artikelNeu]").val();
 	var preis =$("input[name=preisNeu]").val();
-	var posting = $.post("artikelHinzufuegenSkript.php",{name:name, preis:preis});	//artikelHinzufuegenSkript.php wird mit den neuen Daten aufgerufen ohne Konsistenzprüfung, das wird dem Admin überlassen
 	
+	var posting = $.post("artikelHinzufuegenSkript.php",{name:name, preis:preis});	//artikelHinzufuegenSkript.php wird mit den neuen Daten aufgerufen ohne Konsistenzprüfung, das wird dem Admin überlassen
+		
 	//Auswertung der Rückgabe des Skripts
 	posting.done(function (data){
 		if(data == "ja")
 		{
 			alert("Neuer Artikel in die Datenbank aufgenommen.");
 		} else {
-			alert("Es ist ein Fehler aufgetreten, bitte versuchen Sie es noch einmal.");
+			alert(data);
 		}
+		window.location = "shopVerwaltung.php";
 	});
 });
 

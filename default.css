@@ -524,7 +524,7 @@
                 text-align: left;
                 padding-top:0.5em; 
                 padding-bottom: 0.5em; /*oben und unten kleiner weißer rand */               
-                
+                min-height: 400px;
                 
                
         }
@@ -596,7 +596,6 @@
                 padding-top: 3em;
                 padding-bottom: 3em;
                 
-                
         }
 
         #page
@@ -653,6 +652,8 @@
                 padding: 1em 0em;
                 border-top: 1px solid rgba(255,255,255,0.08);
                 text-align: center;
+                max-height: 200 px;
+                
         }
         
         #copyright p
@@ -667,6 +668,7 @@
                 text-decoration: none;
                 color: rgba(255,255,255,0.6);
         }
+        
 
 /*********************************************************************************/
 /* Newsletter */
